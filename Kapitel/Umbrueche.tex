@@ -1,0 +1,19 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsectionstage[2]{Zeilen- / Seitenumbrüche}
+%
+%\vspace{-1\baselineskip}
+\negAbstand
+\begin{lstlisting}
+\begin{samepage} 		... \end{samepage}		% kein Seitenumbruch hier ("Wunsch")
+\parbox{...}{\linewidth}		% kein Seitenumbruch hier (stärker)
+\begin{minipage}[position][hoehe][innen-position]{\linewidth} ... \end{minipage} % kein Seitenumbruch (wie parbox, allerdings mehr Funktionen innerhalb erlaubt.)
+
+\mbox{ ... }				% Wie ein Zeichen behandeln. Alternative: ~ (geschütztes Leerzeichen) oder "~ (geschützter Bindestrich)
+\end{lstlisting}
+
+\subsubsection*{Geschütze Zeichen}
+\begin{tabbing}
+\lstinline|\,| \hspace{0.5em} \= kleines geschütztes Leerzeichen \\
+\lstinline|~|		\> geschütztes ganzes Leerzeichen \\
+\lstinline|"~|	\> geschützter Bindestrich 
+\end{tabbing}

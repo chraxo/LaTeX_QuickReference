@@ -1,0 +1,454 @@
+%%%%%%%%%%%%%%%%%%%
+\setlength{\columnseprule}{0.5pt}
+%\mycolumnbreak
+\pagebreak
+
+\sectionstage[2]{Mathematik}\label{cha:mathe}
+\todo{Wo werden welche Pakete benötigt?}
+
+\subsectionstage[3]{Umgebung für Mathe im Fließtext}
+\begin{tabular}{c|c}
+\lstinline|\begin{math} a=3 \end{math}| &  \begin{math} a=3 \end{math} \\
+
+\lstinline|$ a=3 $| 			&  $ a=3 $ \\
+\end{tabular}
+
+
+%\subsectionstage[2]{Häufige Zeichen und Operatoren}
+
+
+\setlength{\columnseprule}{0.5pt}
+\subsection{Wichtige Operatoren}
+%\begin{multicols}{2}
+\begin{tabbing}
+$\lim_{x\to 0}$ \hspace{2em}	\= 	\kill
+
+$\frac{2}{3}$			\>	\lstinline|\frac{2}{3}|	\\
+$\sqrt{2}$				\> 	\lstinline|\sqrt{2}|		\\
+$\sqrt[3]{2}$			\> 	\lstinline|\sqrt[3]{2}|	\\
+$\int \limits_{0}^{1}$			\> 	\lstinline|\int\limits_{0}^{1}|	\\
+$\int\nolimits_{0}^{1}$		\> 	\lstinline|\int\nolimits_{0}^{1}|	\\
+$\int_{0}^{1}$		\> 	\lstinline|\int_{0}^{1}|	\\
+
+$\int\!\!\!\int_{D} \mathrm{d}x\,\mathrm{d}y$		
+	\> 	\lstinline|\int\!\!\!\int_{D}| 	\\
+	\> \lstinline|\mathrm{d}x \,| \\
+	\> \lstinline|\mathrm{d}y|	\\
+	
+$\lim_{x\to 0}$		\> 	\lstinline|\lim_{x\to 0}|	\\
+$x' x''$						\> \lstinline|x' x''| \\
+$x^{a+b}$		\> 	\lstinline|x^{a+b}|	\\
+$x_{a1}$		\> 	\lstinline|x_{a1}|	\\
+
+$\hat x$							\> 	\lstinline|\hat x|	\\
+$\tilde x$						\> 	\lstinline|\tilde x|	\\
+$\widehat{xyz}$				\> 	\lstinline|\widehat{xyz}|	\\
+$\widetilde {xyz}$		\> 	\lstinline|\widetilde {xyz}|	\\
+$\overline x$					\> 	\lstinline|\overline x|	\\
+$\underline x$				\> 	\lstinline|\underline x|	\\
+$\vec x$							\>  \lstinline|\vec x| \\
+$\overbrace{1+2}^{x}$		\> 	\lstinline|\overbrace{1+2}^{x}|	\\
+$\underbrace{1+2}_{x}$		\> 	\lstinline|\underbrace{1+2}_{x}|	\\
+%$n\choose k$		\> 	\lstinline|{n\choose k}|	\\[1ex]
+%${x\atop y}$		\> 	\lstinline|{x\atop y}| \\[1ex]
+$\overset{B}{A}$		\> 	\lstinline|\overset{B}{A}|	\\[1ex]
+$\underset{B}{A}$		\> 	\lstinline|\underset{B}{A}| \\[1ex]
+${\binom{a}{b}}$		\> 	\lstinline|\binom{a}{b}|
+\end{tabbing}
+
+%\end{multicols}
+
+%%%%%%%%%%
+%\genfrac{l}{r}{w}{s}{zähler}{nenner}
+%genfrac dient der flexiblen Erzeugung von Brüchen. Dabei steht
+    %l für einen optionalen linken Begrenzer (z.B. [),
+    %r für einen optionalen rechten Begrenzer (z.B. ]),
+    %w für die Dicke des Bruchstriches (width). Default ist 1pt,
+    %s für den Style. Default ist 1. Gültige Werte sind 0,1,2,3 für \displaystyle, \textstyle, \scriptstyle, \scriptscriptstyle
+		%%%%%%%%%%
+\setlength{\columnseprule}{0.5pt}
+
+
+\begin{multicols}{4}
+\begin{lstlisting}
+\sin
+\cos
+\tan
+\cot
+\arccos
+\arcsin
+\arctan
+\sinh
+\cosh
+\tanh
+\coth
+
+\exp
+\ln
+\lg
+\log
+
+\min
+\max 
+
+\arg
+\csc
+\deg 
+\det 
+\dim
+\gcd
+\hom
+\inf
+\ker
+\lim
+\liminf
+\limsup
+\pmod
+\Pr
+\sec
+\sup 
+\end{lstlisting}
+
+\end{multicols}
+
+
+\subsubsection*{Paket \Paket{nicefrac}}
+\lstinline|\nicefrac{2}{3}|: 
+	\hspace{1em} \nicefrac{2}{3} 
+	\hspace{1em} (auch außerhalb Mathe-Umgebung)
+
+% ----- Matrizen ----- ------ -----
+\subsectionstage[3]{Matrizen und Vektoren}
+% ---- Matrix ----
+\begin{minipage}{0.3\linewidth}
+$\begin{matrix} 1 & 2 \\ 3 & 4 \end{matrix}$
+\end{minipage}
+%
+\begin{minipage}{0.5\linewidth}
+\begin{lstlisting}
+\begin{matrix}
+	 1 & 2 \\ 3 & 4 
+\end{matrix}
+\end{lstlisting}
+\end{minipage}
+%%%%%
+\negAbstand
+\begin{minipage}{0.3\linewidth}
+$\begin{smallmatrix} 1 & 2 \\ 3 & 4 \end{smallmatrix}$
+\end{minipage}
+%
+\begin{minipage}{0.5\linewidth}
+\begin{lstlisting}
+\begin{smallmatrix}
+	 1 & 2 \\ 3 & 4
+\end{smallmatrix}
+\end{lstlisting}
+\end{minipage}
+%%%%%
+\negAbstand
+% ----- pmatrix -----
+\begin{minipage}{0.3\linewidth}
+$\begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$
+\end{minipage}
+%
+\begin{minipage}{0.5\linewidth}
+\begin{lstlisting}
+\begin{pmatrix}
+	 1 & 2 \\ 3 & 4 
+\end{pmatrix}
+\end{lstlisting}
+\end{minipage}
+%%%%%
+%
+\verb|vmatrix:| $\begin{vmatrix} 1 \end{vmatrix}$
+\qquad
+\verb|Vmatrix:| $\begin{Vmatrix} 1 \end{Vmatrix}$
+\qquad
+\verb|bmatrix:| $\begin{bmatrix} 1 \end{bmatrix}$
+\qquad
+\verb|Bmatrix:| $\begin{Bmatrix} 1 \end{Bmatrix}$
+%
+% ----- cases -----
+\begin{minipage}{0.3\linewidth}
+$\begin{cases}
+	%a & \text{für} & x \geq 3 \\
+	%a & \text{für} & x < 3
+	1 & 2 \\ 3 & 4
+\end{cases}$
+\end{minipage}
+%
+\begin{minipage}{0.5\linewidth}
+\begin{lstlisting}
+\begin{cases}
+	 1 & 2 \\ 3 & 4 
+\end{cases}
+\end{lstlisting}
+\end{minipage}
+%
+% ----- Array -----
+\negAbstand
+\begin{minipage}{0.3\linewidth}
+$\begin{array}{cc} 1 & 2 \\ 3 & 4 \end{array}$ 
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+\begin{lstlisting}
+\begin{array}{cc}
+		1 & 2 \\ 3 & 4
+\end{array}
+\end{lstlisting}
+\end{minipage}
+%%%%%
+
+
+%%%%%%%%%%%%
+\subsectionstage[3]{Formatierungen}
+\setlength{\columnseprule}{0.5pt}
+\begin{tabbing}
+	$\mathbf{ABCabc}$		\= \lstinline|\mathnormal{ABCabc}| \=		\kill
+	%
+	$\mathnormal{ABCabc}$	\> \lstinline|\mathnormal{ABCabc}|	 \small default
+	\\
+	$\mathrm{ABCabc}$		\> \lstinline|\mathrm{ABCabc}|	\> \small roman
+	\\
+	$\mathbf{ABCabc}$		\> \lstinline|\mathbf{ABCabc}|	\> \small bold roman
+	\\
+	$\mathsf{ABCabc}$		\> \lstinline|\mathsf{ABCabc}|	\> \small sans serif
+	\\
+	$\mathit{ABCabc}$		\> \lstinline|\mathit{ABCabc}|	\> \small text italic
+	\\
+	$\mathtt{ABCabc}$		\> \lstinline|\mathtt{ABCabc}|	\> \small typewriter
+	\\
+	$\mathcal{ABCabc}$	\> \lstinline|\mathcal{ABCabc}|	\> \small calligraphic
+	\\
+	$\mathbb{RQZNPC}$	\> \lstinline|\mathbb{RQZNP}| 
+		{\footnotesize\slshape(\Paket{amssymb})}
+	\\[0.5\baselineskip]
+	%
+
+\textbf{Schriftgrößen:} 
+	\\
+	$\displaystyle Text$ \> \lstinline|\displaystyle Text|
+		\\
+	$\textstyle Text$ \> \lstinline|\textstyle Text|
+		\\
+	$\scriptstyle Text$ \> \lstinline|\scriptstyle Text|
+		\\
+	$\scriptscriptstyle Text$ \> \lstinline|\scriptscriptstyle Text|
+\end{tabbing}
+
+
+\subsectionstage[3]{Klammern}
+\begin{tabbing}
+\hspace{2.5em} \=  \hspace{3em} 
+\= \hspace{2.5em} \= \hspace{3em}
+\= \hspace{2.5em} \= \hspace{3em} \kill
+$( \dots)$								\> \lstinline|()|	\>
+$[ \dots]$								\> \lstinline|[]|	\>
+$\{ \dots\}$							\> \lstinline|\{ \}	|	\\
+$\lbrace \dots\rbrace$		\> \lstinline|\lbrace \rbrace|	\\
+$\langle \dots\rangle$		\> \lstinline|\langle \rangle|	
+\end{tabbing}
+%\negAbstand
+%
+\begin{tabbing}
+$(\frac{a}{b})$ \hspace{1ex}  \= \lstinline|(\frac{a}{b})|  \\
+
+$\left(\frac{a}{b}\right)$  
+	\> \lstinline|\left(\frac{a}{b}\right) % autom. Größe|  \\
+	
+$\bigl(\frac{a}{b}\bigr)$  
+	\> \lstinline|\bigl(\frac{a}{b}\bigr)|  \\
+	
+$\Bigl(\frac{a}{b}\Bigr)$  
+	\> \lstinline|\Bigl(\frac{a}{b}\Bigr)|  \\
+	
+$\biggl(\frac{a}{b}\biggr)$  
+	\>	\begin{minipage}{0.6\linewidth}
+				\lstinline|\biggl(\frac{a}{b}| 
+				\lstinline|\biggr)|
+			\end{minipage} \\
+	
+$\Biggl(\frac{a}{b}\Biggr)$  
+	\> \begin{minipage}{0.6\linewidth}
+				\lstinline|\Biggl(\frac{a}{b}|
+				\lstinline|\Biggr)|  
+			\end{minipage} \\
+	
+\end{tabbing}
+%\ifaklein{}{
+	%\end{multicols}
+%}
+
+\negAbstand
+\subsectionstage[2]{Umgebungen für Mathe in separater Zeile}
+
+\addtolength{\leftmargini}{-15pt}
+\begin{itemize}
+	\item {\bfseries equation oder \lstinline|\[ \]|}: Einzelne abgesetzte Gleichung
+	\item multline: (Einzelne) Gleichung über mehrere Zeilen
+	\item gather: 	Mehrere Gleichungen
+	\item {\bfseries align}: 		Mehrere Gleichungen mit Ausrichtungspunkten
+	\item flalign: 	wie align, jedoch rechts-/links-bündig
+	\item *: jeweils ohne Gleichungs-Nummerierung (\mbox{\bfseries equation*}, 
+	multline*, 
+	gather*, 
+	{\bfseries align*}, 
+	flalgin*)
+\end{itemize}
+\addtolength{\leftmargini}{15pt}
+
+\setlength{\columnseprule}{0.5pt } % Trennlinie für multicols
+
+
+\newcommand{\myhruleB}{
+	\myhrule\negAbstand
+	}
+
+%%%%% \[ \] %%%%%
+\begin{multicols}{2}
+\begin{lstlisting}
+\[
+	ab = c
+\]
+\end{lstlisting}
+\columnbreak \hspace{0.5\baselineskip}
+\[
+	ab = c
+\]
+\end{multicols}
+
+\myhruleB
+
+%%%%% equation %%%%%
+\begin{multicols}{2}
+\begin{lstlisting}
+\begin{equation} 
+	ab = c \\
+	d	 = ef
+\end{equation}
+\end{lstlisting}
+\columnbreak
+\begin{equation} 
+	ab = c 
+\end{equation}
+\end{multicols}
+
+
+\myhruleB
+
+%%%%% multline %%%%%
+\begin{multicols}{2}
+\begin{lstlisting}
+\begin{multline} 
+	ab = c \\
+	d	 = ef
+\end{multline}
+\end{lstlisting}
+\begin{multline} 
+	ab = c \\
+	+ d \cdot ef
+\end{multline}
+\end{multicols}
+
+\myhruleB
+
+%%%%% gather %%%%%
+\begin{multicols}{2}
+\begin{lstlisting}
+\begin{gather} 
+	ab = c \\
+	d	 = ef
+\end{gather}
+\end{lstlisting}
+\begin{gather} 
+	ab = c \\
+	d	 = ef
+\end{gather}
+\end{multicols}
+
+\myhruleB
+
+%%%%% align %%%%%
+\begin{multicols}{2}
+\begin{lstlisting}
+\begin{align} 
+	ab&=c 	& d	&= ef \\
+	g &=hi 	& j &= k 
+\end{align}
+\end{lstlisting}
+\begin{align} 
+	ab&=c 	& d	&= ef \\
+	g &=hi 	& j &= k 
+\end{align}
+\end{multicols}
+
+\myhruleB
+
+%%%%% flalign %%%%%
+\begin{multicols}{2}
+\begin{lstlisting}
+\begin{flalign} 
+	ab&=c 	& d	&= ef \\
+	g &=hi 	& j &= k 
+\end{flalign}
+\end{lstlisting}
+\columnbreak
+\begin{flalign} 
+	ab&=c 	& d	&= ef \\
+	g &=hi 	& j &= k 
+\end{flalign}
+\end{multicols}
+
+\subsubsection*{Gleichungsnummer verändern}
+\negAbstand\negAbstand
+\begin{multicols}{2}
+\begin{lstlisting}
+\begin{align} 
+	ab&=c  \tag{$*$} 	\\
+	ab&=c  \notag 		\\
+	ab&=c
+\end{align}
+\end{lstlisting}
+\begin{align} 
+	ab&=c  \tag{$*$} 	\\
+	ab&=c  \notag 		\\
+	ab&=c 
+\end{align}
+\end{multicols}
+
+\begin{equation}
+%\numbereq
+	a = b
+	%\label{eq:}
+\end{equation}
+
+
+\noindent \begin{minipage}{\linewidth}
+\subsectionstage[1]{Erweiterte Formatierungen}
+\negAbstand
+\begin{lstlisting}
+\usepackage[OPTIONEN]{amsmath}		% Erweiterter Mathematiksatz
+	% Option leqno:  Gleichungsnummer links
+	% Option requno: Gleichungsnummer rechts
+	% Option fleqn:  Formel mit Einzug. Einzug in Präambel definierbar mit: \setlength\mathindent{5mm}
+	
+% Abstände Matheumgebungen
+\setlength\abovedisplayshortskip{0pt}		% ?
+\setlength\belowdisplayshortskip{10pt}	% ?
+\setlength\abovedisplayskip{0pt}				% kein Abstand vor Gleichungsumgebungen
+\setlength\belowdisplayskip{20pt}				% ?
+\end{lstlisting}
+
+\subsubsection*{Mathe in Überschriften \stage{1}}
+Schriftart anpassen (nur KOMA-Klassen):
+\begin{lstlisting}
+	\renewcommand*{\sectfont}{\sffamily\bfseries\boldmath}
+\end{lstlisting}
+
+\end{minipage}
+
+
+\hrule \vspace{0.5\baselineskip}
+%----- EOF -----
+
+

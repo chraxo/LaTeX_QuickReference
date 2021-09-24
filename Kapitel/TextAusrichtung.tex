@@ -1,0 +1,19 @@
+%%-------------------------
+\hrule \vspace{0.5\baselineskip}
+\subsectionstage[2]{Ausrichtung}
+%\vspace{-1\baselineskip}
+%
+\todo{Blocksatz, Flattersatz, Rauhsatz: siehe \url{uweziegenhagen.de/?p=1706}}
+%
+\begin{lstlisting}
+\usepackage{ragged2e}
+\RaggedRight	% linksbündig  (ab jetzt)
+\Centering		% zentriert     (ab jetzt)
+\RaggedLeft		% rechtsbündig (ab jetzt)
+\begin{FlushLeft} 	... \end{FlushLeft}		% linksbündig
+\begin{Center} 			... \end{Center}			% zentriert
+\begin{FlushRight}	... \end{FlushRight}	% rechtsbündig
+
+Ohne ragged2e: \raggedright \centering und \raggedleft, und flushleft, center und flushright. Eine Silbentrennung findet jedoch quasi nicht statt!
+\end{lstlisting}
+\negAbstand

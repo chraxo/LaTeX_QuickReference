@@ -1,0 +1,40 @@
+\sectionstage[4]{Einrichten des TeXnicCenter \texorpdfstring{}{(Windows)} }
+\begin{enumerate}
+	
+	\item[A:] Einfachste Möglichkeit: In der richtigen Reihenfolge installieren:
+	\begin{enumerate}
+		\item \emph{MikTeX}. \newblock Bei der Frage \emph{"`Install missing packages on the fly"'} \emph{"`Yes"'} auswählen.
+		\item \emph{SumatraPDF}
+		\item \emph{TeXnicCenter}
+	\end{enumerate}
+	
+	\item[B:] Alternative (manuelle) Möglichkeit - Falls A.a) bis A.c) bereits installiert:
+		\begin{enumerate}
+		
+			\item Im TeXnicCenter: Ausgabe > Ausgabeprofile definieren (oder Alt+F7 drücken) und das Profil \emph{LaTeX \Pfeil PDF} auswählen.
+			
+			\item In der Registerkarte  \emph{"`(La)TeX-Compiler"'} im Feld \emph{"`Argumente, die an den Compiler übergeben werden sollen:"'} folgendes eintragen:\newline
+			\verb|-synctex=-1 -max-print-line=120 -interaction=nonstopmode "%wm"|
+			
+			\item In der Registerkarte \emph{"`Viewer"'} im Feld \emph{"`Pfad"'} folgendes eintragen:\newline
+				\verb|C:\Program Files (x86)\SumatraPDF\SumatraPDF.exe -inverse-search|
+				\newline 
+				\verb|"\"C:\Program Files (x86)\TeXnicCenter\TeXnicCenter.exe\" /ddecmd|
+				\newline
+				\verb|\"[goto('%f','%l')]\""|
+			
+			\item Im Bereich \emph{"`Projektausgabe betrachten"'} \emph{"`Kommandozeile"'} auswählen und in das Feld \emph{"`Kommando"'} folgendes eintragen:
+			\newline
+			\verb|"%bm.pdf"|
+			
+			\item Im Bereich \emph{"`Suche in Ausgabe"'} \emph{"`DDE-Kommando"'} auswählen und im Feld \emph{"`Kommando:"'} folgendes eintragen: 
+				\newline
+				\verb|[ForwardSearch("%bm.pdf","%Wc",%l,0,0,1)]|
+			
+			\item Im Feld \emph{"`Server:"'} \verb|sumatra| 
+				und im Feld \emph{"`Thema:"'} \verb|control| eintragen.
+			
+			\item Im Bereich \emph{"`Vor Compilierung Ausgabe schließen"'} \emph{"`Nicht schließen"'} auswählen.
+		\end{enumerate}
+	
+\end{enumerate}

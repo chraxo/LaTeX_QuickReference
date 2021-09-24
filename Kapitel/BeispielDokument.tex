@@ -1,0 +1,90 @@
+%%%%%%%%%%%%%%%%%%%
+%\columnbreak
+\section{Beispieldokument / Dokumentenvorlage}
+\negAbstand
+%
+\begin{multicols}{2}
+\begin{lstlisting}
+\documentclass[ngerman,a4paper,oneside, fontsize=12pt, notitlepage,
+	%DIV=calc, %Satzspiegel berechnen (calc, 12, etc.)
+	%BCOR=0cm,			% Bindekorrektur
+	%headings=small	% kleine Ueberschriften
+]{scrbook}
+\usepackage 						{fixltx2e} 	
+\usepackage [T1] 				{fontenc} 
+\usepackage 						{lmodern}
+\usepackage [utf8] 			{inputenc}	% (utf8, ansinew, latin1, applemac)
+\usepackage [ngerman]		{babel}	
+\usepackage 						{ragged2e}	
+\usepackage [babel]			{microtype}
+
+%% Layout etc.
+\usepackage [singlespacing]	{setspace}		% (singlespacing, onehalfspacing, doublespacing)
+\usepackage [left=2cm,top=0.5cm,right=1cm,bottom=0cm,includeheadfoot]	{geometry}
+\usepackage [above, below]	{placeins} % Befehl "\FloatBarrier" ermöglichen: Gleitobjekte müssen vor \FloatBarrier ausgegeben werden. Option [above] --> Ausgabe auch danach erlaubt, sofern es sich um die selbe Seite handelt.
+	%\usepackage								{multicol}
+
+%% Formatierungen u.ä.
+\usepackage [dvipsnames]		{xcolor}
+	%\usepackage [normalem]			{ulem}
+	%\usepackage								{fancybox}
+	%\usepackage [hyphens]			{url}
+	%\usepackage								{textcomp}
+
+%% Mathematik
+\usepackage{nicefrac}		 % Kleine Bruchsymbole: \nicefrac{a}{b}
+	%\usepackage{amsmath}		
+	%\usepackage{amssymb} 		
+	%\usepackage{mathtools}	
+
+%% Grafiken
+\usepackage{graphicx}	
+	%\usepackage{wrapfig}
+	%\usepackage{caption}
+	%\usepackage{subcaption}
+	%\usepackage{tikz}
+
+%% Tabellen
+\usepackage{booktabs}
+\usepackage{tabularx}
+	%\usepackage{colortbl}
+	%\usepackage{longtable}
+
+%% ANDERES
+\usepackage{blindtext} 
+
+%%% weitere Pakete hier laden %%%
+
+%% PDF-Ausgabe konfigurieren
+\usepackage[pdftex,	hidelinks, pdfdisplaydoctitle=true,
+	pdfauthor = {Max Mustermann},
+	pdftitle  = {Beispiel-Dokument},
+	pdfsubject= {},
+	pdfkeywords={},
+	%colorlinks=false, linkcolor=black, urlcolor=black, citecolor=black
+	%%%
+	bookmarksopen=false,
+	%pdffitwindow=true,
+	pdfpagelayout={SinglePage},
+	pdfpagemode={UseNone}, 
+	%pagebackref =true, 
+]{hyperref}
+\begin{document}
+	TEXT
+\end{document}
+\end{lstlisting}
+
+\end{multicols}
+
+\subsubsection*{Bewährte Werte für Seitenränder mit geometry}
+\negAbstand
+\begin{lstlisting}
+% A4 normal:		 left=3.0cm,	right=2.0cm, top=2.5cm, bottom=1.0cm, includeheadfoot 
+% A5 normal:		 left=1.6cm, right=1.6cm, top=1.5cm, bottom=1.0cm, includeheadfoot
+% A4: 				 left=2.0cm, right=1.0cm, top=0.0cm, bottom=0.0cm, includeheadfoot
+% a5 knapp:			 left=1.6cm, right=1.0cm, top=0.5cm, bottom=0cm, includeheadfoot
+\end{lstlisting}
+
+
+\hrule \vspace{0.5\baselineskip}
+%----- EOF -----

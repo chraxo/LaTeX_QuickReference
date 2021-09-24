@@ -1,0 +1,252 @@
+%%%%%%%%%%%%%%%%%%%
+\columnbreak
+\sectionstage[2]{Tabellen}
+%
+\noindent\begin{minipage}{\linewidth}
+	%\captionof{table}{TEXT}
+	\Centering
+	\begin{tabular}{|l|r c l|}
+		\hline
+			1 &rechts	& mittig& links\\
+			2 &a 			& b 		& c \\
+		\cline{2-4}
+			3 &\multicolumn{3}{c|}{mehrere Spalten}\\
+		\hline
+	\end{tabular}
+\end{minipage}
+
+\begin{lstlisting}
+\begin{table}
+	\caption{TABELLENÜBERSCHRIFT}
+	\label{KEY}
+	\centering
+	\begin{tabular}{|l|r c l|}
+		\hline
+			1 &rechts& mittig& links\\
+			2 &a & b & c \\
+		\cline{2-4}
+			3 &\multicolumn{3}{c|}{mehrere Spalten}\\
+		\hline
+	\end{tabular}
+\end{table}
+\end{lstlisting}
+%
+%%%%%%%%%%%%%%%%%%%%%
+\subsectionstage[3]{Schönere Tab. (\Paket{booktabs})}
+
+\noindent\begin{minipage}{\linewidth}
+\Centering
+\begin{tabular}{cc}
+\toprule
+Spalte 1 & Spalte 2 \\
+\midrule
+eins & zwei\\
+drei & vier\\
+\bottomrule
+\end{tabular}
+\end{minipage}
+%
+%\begin{minipage}{0.5\linewidth}
+\begin{lstlisting}
+\usepackage{booktabs}
+\begin{tabular}{cc}
+	\toprule
+		Spalte 1 & Spalte 2 \\
+	\midrule
+		eins & zwei\\
+		drei & vier\\
+	\bottomrule
+\end{tabular}
+\end{lstlisting}
+%\end{minipage}
+
+
+\vspace{-1\baselineskip}
+\subsubsection*{Befehls-Übersicht}
+\negAbstand
+
+\begin{lstlisting}
+\toprule[LEN](			% LEN: Liniendicke
+\midrule[LEN]
+\bottomrule[LEN]
+\cmidrule[LEN](TRIM){A-B}	% Zusätzliche Linie zwischen den Spalten A und B. TRIM: r, r{LEN}, l oder l{LEN}
+\addlinespace[LEN]	% Zusätzlicher Zeilenabstand
+\end{lstlisting}
+
+\Paket{booktabs} ist kombinierbar mit den Umgebungen \Umgebung{tabular}, \Umgebung{array}(\verb|\usepackage{array}|) und \Umgebung{longtable} (\verb|\usepackage{longtable}|).
+
+%%%%%%%%%%%%%%%%%%%%%
+%\columnbreak
+\subsectionstage[2]{Feste Tab.-breite (\Paket{tabularx})}
+Beispiel (noch näher erläutern!):
+\begin{lstlisting}
+\usepackage{tabularx}
+	\newcolumntype{L}[1]{>{\RaggedRight \arraybackslash}p{#1}} % linksbündig	%mit tabularx neue Spaltentypen definieren.
+	\newcolumntype{M}[1]{>{\RaggedRight \arraybackslash}m{#1}} % linksbündig
+	
+	\newcolumntype{C}[1]{>{\Centering \arraybackslash}p{#1}} % zentriert
+	\newcolumntype{D}[1]{>{\Centering \arraybackslash}m{#1}} % zentriert
+		
+	\newcolumntype{R}[1]{>{\RaggedLeft \arraybackslash}p{#1}} % rechtsbündig
+	
+	\newcolumntype{B}[1]{>{\arraybackslash}p{#1}}	%Blocksatz
+\end{lstlisting}
+
+\negAbstand
+
+%%%%%%%%%%%%%%%%%%%%%
+\subsectionstage[4]{Farbige Tab. (\Paket{colortbl})}
+\negAbstand
+\begin{lstlisting}
+\usepackage{array,color} % oder xcolor
+\usepackage{colortbl}
+\end{lstlisting}
+
+\negAbstand\negAbstand
+
+%%%%%
+\begin{multicols}{2}
+%
+\begin{lstlisting}
+\arrayrulecolor{red}		% Farbe der Tabellen-Linien
+
+\begin{tabular}{|
+	>{\columncolor{lime}}l|
+	>{\columncolor{lightgray}}c|
+	}
+	\toprule %o.\hline
+		eins & zwei\\
+		drei & vier\\
+	\bottomrule
+\end{tabular}
+\end{lstlisting}
+
+\arrayrulecolor{red}		% Farbe der Tabellen-Linien
+\begin{tabular}{|
+	>{\columncolor{lime}}l|
+	>{\columncolor{lightgray}}c|
+	}
+\toprule
+eins & zwei\\
+drei & vier\\
+\bottomrule
+\end{tabular}
+
+\columnbreak
+
+\begin{lstlisting}
+\begin{tabular}{lc}
+	\rowcolor{Goldenrod}
+	eins 
+	& zwei\\
+	drei 
+	& \cellcolor{Tan} vier\\
+\end{tabular}
+\end{lstlisting}
+
+\arrayrulecolor{black}
+\begin{tabular}{lc}
+\toprule
+\rowcolor{Goldenrod}eins & zwei\\
+drei & \cellcolor{Tan}vier\\
+\bottomrule
+\end{tabular}
+
+
+\end{multicols}
+%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%
+\subsectionstage[3]{Mehrseitige Tab. (\Paket{longtable})\hspace{-0.8ex}}
+Benutzbar wie die \Umgebung{tabular}-Umgebung.
+
+%\begin{multicols}{2}
+\begin{lstlisting}
+\usepackage{longtable}
+\usepackage{booktabs}		% in diesem Beispiel verwendet
+
+\begin{longtable}{c|c|c|}
+	\caption{Nährstofftabelle}\\
+	% % Kopfzeile der ersten Seite
+	\toprule
+	...
+	\\ \midrule \endfirsthead 
+	%% Kopfzeile ab der zweiten Seite
+	\toprule
+	...
+	\\ \midrule \endhead
+	% % Fußzeile der ersten Seite
+	...
+	\bottomrule	\endfoot
+	%% Fußzeile ab der zweiten Seite
+	...
+	\bottomrule \endlastfoot
+	<Inhalt der Tabelle>
+\end{longtable}
+\end{lstlisting}
+%\end{multicols}
+\negAbstand
+
+
+%%%%%%%%%%%%%%%%%%%%%
+\subsectionstage[2]{Doppelte Linien in Tabellen (\Paket{hhline})}
+%\negAbstand
+
+
+\noindent\begin{minipage}{\linewidth}
+\Centering
+\begin{tabular}{||cc||c|c||} \hhline{|t:==:t:==:t|}
+a & b & c & d \\ \hhline{|:==:|~|~||}
+w & x & y & z \\ \hhline{|b:==:b:==:b|}
+\end{tabular}
+\end{minipage}
+%
+%\noindent\begin{minipage}{0.5\linewidth}
+\begin{lstlisting}
+\begin{tabular}{||cc||c|c||} \hhline{|t:==:t:==:t|}
+a & b & c & d \\ \hhline{|:==:|~|~||}
+w & x & y & z \\ \hhline{|b:==:b:==:b|}
+\end{tabular}
+\end{lstlisting}
+%\end{minipage}
+%
+\hrule
+%
+\posAbstand
+
+\noindent\begin{minipage}{\linewidth}
+\Centering
+\begin{tabular}{||cc||c|c||} \hhline{|t:==:t:==:t|}
+a & b & c & d \\\hhline{|:==:|~|~||}
+1 & 2 & 3 & 4 \\\hhline{#==#~|=#}
+i & j & k & l \\\hhline{||--||--||}
+w & x & y & z \\\hhline{|b:==:b:==:b|}
+\end{tabular}
+\end{minipage}
+%
+%\begin{minipage}{0.5\linewidth}
+\begin{lstlisting}
+\begin{tabular}{||cc||c|c||} \hhline{|t:==:t:==:t|}
+a & b & c & d \\ \hhline{|:==:|~|~||}
+1 & 2 & 3 & 4 \\ \hhline{#==#~|=#}
+i & j & k & l \\ \hhline{||--||--||}
+w & x & y & z \\ \hhline{|b:==:b:==:b|}
+\end{tabular}
+\end{lstlisting}
+%\end{minipage}
+%
+
+
+\negAbstand
+
+%%%%%%%%%%%%%%%%%%%%%
+\subsectionstage[1]{Tabellenformat anpassen}
+\negAbstand
+\begin{lstlisting}
+\setlength{\extrarowheight}{4pt} % extra Zeilenhöhe (Tabellenzeilen) 
+\renewcommand{\arraystretch}{Faktor}	% Abstand zwischen Zeilen ändern. (Textzeilen) oder \setstretch{Faktor} (Paket setspace)
+\setlength{\tabcolsep}{6pt}		% Abstand zwischen Spalten ändern
+\end{lstlisting}
+\negAbstand
+\hrule \vspace{0.5\baselineskip}
+%----- EOF -----

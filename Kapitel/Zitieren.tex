@@ -1,0 +1,73 @@
+
+\columnbreak
+\section[Zitieren \& Literaturverzeichnis]{Zitieren \& Literaturverz. \stage{3}}
+
+\lstinline|\cite[S.\,36]{Kuchling2007}| \linebreak $\Rightarrow$[Kuch,~S.36]
+
+\noindent\lstinline|\nocite{*}	% Alle Quellen (auch nicht zitierte} in's Literaturverzeichnis eintragen.|
+
+\subsectionstage[4]{manuell}
+\negAbstand
+\begin{lstlisting}
+\begin{thebibliography}{LK} % Statt LK das Längste Kürzel (z.B. "Kuch~07") eintragen.
+\bibitem[Jahn~12]{Jahne2012}
+	B.\,Jähne.
+	\newblock \textit{Digitale Bildverarbeitung}.
+	\newblock Springer, Berlin, Heidelberg, 2012.
+...
+\end{thebibliography}
+\end{lstlisting}
+
+
+\subsubsectionstage[2]{Empfehlung Zitierformat für Bc.- und Mst.-Arbeiten}
+
+	[Jahn~12]
+	B.\,Jähne.
+	\newblock {\itshape Digitale Bildverarbeitung}.
+	\newblock Springer, Berlin, Heidelberg, 2012.\\[1ex]
+	%
+	[Wiki~13a]	Wikipedia. 
+	\newblock Artikel {\itshape Bayes-Klassifikator}.
+	\newblock \url{http://de.wikipedia.org/wiki/Bayes-Klassifikator},
+	\newblock Abgerufen am 02.02.2014.
+\negAbstand
+
+\subsection{Literaturverzeichnis mit BibTeX}
+Für die Erstellung von .bib-Files empfohlenes Programm: JabRef \newline
+\lstinline|\bibliographystyle{wmaainf}| \newline
+\lstinline|\bibliography{bibfile.bib}|
+\negAbstand
+
+\subsubsection*{Beispiel für \nolinkurl{.bib}-Datei}
+\negAbstand
+\begin{lstlisting}
+@BOOK{Kuchling2007,
+	title			={Taschenbuch der Physik},
+	publisher	={Hanser},
+	year			={2007},
+	author		={Horst Kuchling},
+	series		={19.\,Auflage},
+	owner			={ca251},
+	timestamp	={2011.08.12},
+}
+\end{lstlisting}
+%
+Mögliche Literatur-Typen: @article, @book, @booklet, @conference, @inbook, @incollection, @inproceedings, @manual, @mastersthesis, @misc, @phdthesis, @proceedings, @techreport, @unpublished
+
+\subsubsection*{Literaturstile für BibTeX}
+{\small
+\begin{itemize}
+	\item wmaainf.bst: Stile plaindin, unsrtdin, alphadin, abbrvdin
+	\item natbib
+	\item natbib + Paket \Paket{custom-bib} (s.a. \url{http://www.golatex.de/brauchbarer-bibtex-stil-t2163.html})
+	\item \Paket{babelbib}: Sprachumschaltung für Bib-Stile
+\end{itemize}
+}
+
+\subsectionstage[0]{Paket \Paket{biblatex}}
+\textcolor{red}{\footnotesize
+This Chapter is still missing. The package ``biblatex'' offers many functions.
+}
+
+\hrule \vspace{0.5\baselineskip}
+%----- EOF -----

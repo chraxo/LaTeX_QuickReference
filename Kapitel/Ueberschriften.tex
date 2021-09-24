@@ -1,0 +1,40 @@
+\subsectionstage[3]{Überschriften}
+\vspace{-0.5\baselineskip}
+Dokumentklasse \emph{article}:
+\begin{lstlisting}
+\section 				{TITEL}
+\subsection 		{TITEL}
+\subsubsection 	{TITEL}
+\end{lstlisting}
+
+\noindent
+Dokumentklasse \emph{report} oder \emph{book}:
+\begin{lstlisting}
+\part {TITEL} % Nur mit Book-Vorlage verfügbar
+\chapter 				{TITEL}
+\section 				{TITEL}
+\subsection 		{TITEL}
+\subsubsection 	{TITEL}
+\end{lstlisting}
+%
+Bei Format-Problemen im PDF-TOC:
+\begin{lstlisting}
+\section{\texorpdfstring{ÜBERSCHRIFT}
+{ÜBERSCHRIFT FÜR PDF-TOC}}
+\end{lstlisting}
+
+\negspace\negspace
+
+\subsubsection*{Keine Nummerierung}
+\noindent\lstinline|\addsec{Anhang}	%Section ohne Nummer|
+\linebreak
+\lstinline|\section* {TITEL} % keine Nummerierung, kein toc-Eintrag|
+
+\negspace
+\subsubsection*{Inhaltsverzeichnis (TOC) beeinflussen}
+\negspace
+%
+\begin{lstlisting}
+\section[toc-Eintrag]{TITEL}
+\addcontentsline{toc}{Kapitelebene}{TITEL}
+\end{lstlisting}

@@ -1,0 +1,105 @@
+\pagebreak
+\sectionstage[2]{Liste einiger Pakete} \label{cha:Paketliste}
+\newcommand{\colorOld}{\color{gray}}
+
+\setlength{\columnseprule}{0.5pt}
+\negAbstand
+\begin{multicols}{2}
+	\addtolength{\leftmargini}{-20pt}
+\begin{description}
+	\item[amsmath] Erweiterte Mathe-Funktionali"-täten
+	\item[amssymb] Zusätzliche mathematische Symbole
+	\item[amsthm] Für die Darstellung mathematischer Theoreme und Beweise.
+	\item[array] \ \bigskip\bigskip
+	\item[babel] \ \bigskip\bigskip
+	\item[blindtext] Befehle \lstinline|\blindtext| und \lstinline|\Blindtext|
+	\item[booktabs] Schönere Tabellen (Verbesserte Abstände; Befehle \lstinline|\toprule \midrule \bottomrule| etc.)
+	\item[calc]  \ \bigskip\bigskip
+	\item[caption]  \ \bigskip\bigskip
+	\item[color] Farben (besser: \Paket{xcolor})
+	\item[colortbl] Tabellen: Farbige Spalten, Zeilen und Zellen.
+	\item[enumitem] Anpassen von Listen-Umgebungen (Layout, etc.)
+	\item[fancybox] Umrahmungen
+	{\colorOld \item[fixltx2e] Korrekturen für \LaTeX2e-Versionen von 2015 oder älter}
+	\item[fontenc]  \ \bigskip\bigskip
+	\item[\underline{graphix}]
+	\item[graphics] Bilder (Besser: \Paket{graphicx})
+	\item[geometry] Seitenränder
+	\item[hhline]  Doppelte Linien in Tabellen
+	\item[hyperref] Einfaches Konfigurieren des erzeugten PDFs: PDF-Links, PDF-Eigenschaften, etc.
+	\item[ifthen]  \ \bigskip\bigskip
+	\item[inputenc] \ \bigskip\bigskip
+	\item[lmodern] Schriftart LatinModern. Lesbarkeit am Computer viel besser als bei der Standard-Schrift ComputerModern.
+	\item[longtable] (Tabellen) Mehrseitige Tabellen
+	\item[lscape] Einzelne Seiten im Querformat. Für gedrehtes Querformat in PDF: Paket \Paket{pdflscape}
+				
+			
+	\end{description}
+	\end{multicols}
+	\begin{multicols}{2}
+	\begin{description}
+	
+	
+	\item[mathtools] 
+	\item[microtype] Verbesserte Mikrotypographie. Sehr zu empfehlen!
+	\item[multicol] Mehrspaltiger Textsatz.
+	\item[natbib] Zitierstil für BibTeX
+	\item[nicefrac] Befehl \lstinline|\nicefrac{}{}| für schöne Brüche (z.\,B. \nicefrac{2}{3})
+	\item[pdflscape]  Einzelne Seiten im Querformat. (Für PDF-Ausgabe. Stattdessen lscape verwenden, falls Ausgabe in DVI-Datei.)
+	\item[pdfpages] PDF-Seiten einfügen
+	
+	\item[\color{red}pgfplots] Diagramme plotten.
+	\item[\color{red}picins] \ \bigskip\bigskip
+	\item[placeins] Steuern der Ausgabeposition von Gleitumgebungen. (u.A. Befehl \lstinline|\FloatBarrier|.)
+	\item[ragged2e] Verbesserte Ausrichtungsbefehle (\lstinline|\Centering, \RaggedRight, \RaggedLeft|)
+	
+			
+	\end{description}
+	\end{multicols}
+		
+	\begin{multicols}{2}
+	\begin{description}
+	
+	\item[scrpage2] Einstellen der Kopf- und Fußzeile.
+	\item[setspace] Zeilenabstand einfach, anderthalbfach oder doppelt.
+	\item[subcaption] \ \bigskip\bigskip
+	\item[siunitx] \lstinline|\SI{1}{\metre}| Korrekte und schöne Darstellung von Einheiten
+	\item[\color{red}stfloats] \ \bigskip\bigskip
+	\item[tabularx] (Tabellen)
+	\item[textcomb] Viele weitere Symbole.
+	\item[tikz] Grafiken programmieren
+	\item[url] Schöne Darstellung von Internetlinks.
+	\item[ulem] Verschiedene Unterstreichungs-/Durchstreichungs-Befehle etc.
+	\item[units]  \ \bigskip\bigskip
+	\item[wrapfig] Bilder im Fließtext platzieren.
+	\item[xcolor] Farben (größere Funktionalität als "`color"')
+	\item[xspace] Befehl \lstinline|\xspace| für "`schlaues"' Leerzeichen in \lstinline|\newcommand|-Befehlen.
+\end{description}
+\end{multicols}
+
+\noindent \subsubsection*{Veraltete Pakete (vgl.\,\cite{l2tabu}):}
+\indent\textcolor{red}{$\rightarrow$ TODO: veraltete Pakete aus l2tabu.pdf hier in die Liste aufnehmen.}
+	\negAbstand
+{\colorOld
+\begin{multicols}{2}
+\begin{description}
+	\item[a4] Ersatz: Dokumentoption "`a4paper"'
+	\item[a4wide] Ersatz: \Paket{lscape} oder \Paket{pdflscape}
+	\item[anysize]
+	\item[caption2]
+	\item[dinat]
+	\item[doublespace] Ersatz: \Paket{setspace}
+	\item[epsf]
+	\item[fancyheadings]
+	\item[glossary]
+	\item[{subfig}] Ersatz: \Paket{caption} und \Paket{subcaption}
+	\item[psfig]
+	\item[scrpage] Ersatz: \Paket{scrpage2}
+	\item[SIstyle] Ersatz: \Paket{siunitx}
+	\item[SIunits] Ersatz: \Paket{siunitx}
+	\item[t1enc]
+	\item[vmargin]
+\end{description}
+\addtolength{\leftmargini}{20pt}
+\end{multicols}
+}\color{black}

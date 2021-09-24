@@ -1,0 +1,183 @@
+%-------------------- --------------------
+%---------- header.tex -------------------
+%-------------------- --------------------
+
+\documentclass[
+	ngerman,
+	a5paper,
+	twoside,
+	fontsize=9pt,
+	notitlepage,
+	DIV=9,
+	%DIV=calc
+	%headings=small,
+	%twocolumn,
+	%openany,
+	version=last,  % neueste Version - Für Rückwärtskompatibilität hier die gewünschte Version eintragen.
+]{scrartcl} % scrartcl
+
+%\usepackage[l2tabu, orthodox]{nag} % auf schlechten Code prüfen
+
+%-------------------- --------------------
+%------- Pakete laden  -------------------
+%-------------------- --------------------
+\usepackage{etex}	% damit mit TIKZ kein Fehler "`No room for a new \dimen"' auftaucht.
+%%\usepackage 								{fixltx2e} 	% not required with latex version later than 2015
+\usepackage [T1] 						{fontenc} 
+\usepackage 								{lmodern}
+\usepackage [utf8] 					{inputenc}	% (utf8, ansinew, latin1, applemac)
+\usepackage [ngerman]				{babel}	
+\usepackage 								{ragged2e}	
+%\usepackage [babel]					{microtype}
+
+\usepackage{xifthen}
+	\newboolean{a5} 	
+	%\setboolean{a5}{false}
+	\setboolean{a5}{true}
+
+% Layout etc.
+\usepackage [singlespacing]	{setspace}
+\usepackage [left=1.6cm, right=1cm, top=0.5cm, bottom=00cm, includeheadfoot]	{geometry}
+\usepackage									{multicol}
+%\usepackage [above, below]	{placeins}
+\usepackage[babel]{microtype}
+
+% Formatierungen u.ä.
+\usepackage [dvipsnames]		{xcolor}
+\usepackage [normalem]			{ulem}
+\usepackage									{fancybox}
+\usepackage [hyphens]				{url}
+\usepackage									{textcomp}
+
+% Mathematik
+\usepackage{nicefrac}
+\usepackage{amsmath}			
+\usepackage{amssymb} 		
+\usepackage{mathtools}
+
+% Grafiken
+\usepackage{graphicx}	
+\usepackage{wrapfig}
+\usepackage[hypcap=false]{caption} % hypcap=false, damit die Warnung verschwindet
+\usepackage{subcaption}
+\usepackage{tikz}
+%\usepackage{pgf}
+
+% Tabellen
+\usepackage{booktabs}
+\usepackage{tabularx}
+	\input{config_tabularx_V1}
+\usepackage{colortbl}
+\usepackage{longtable}
+\usepackage{hhline}
+
+% ANDERES
+\usepackage{blindtext} 
+%\usepackage{pgfplots}
+%\usepackage{filecontents}
+%\usepackage{enumitem}
+\usepackage{xspace}
+\usepackage{calc}
+\usepackage{scrlayer-scrpage}
+%%\usepackage{titlesec}
+\usepackage{boxedminipage}
+
+
+%-------------------- --------------------
+%-------------- Listings -----------------
+%-------------------- --------------------
+\usepackage{listings}
+\lstset{literate=%	% Für utf8 notwendig.
+	{Ö}{{\"O}}1
+	{Ä}{{\"A}}1
+	{Ü}{{\"U}}1
+	{ß}{{\ss}}1
+	{ü}{{\"u}}1
+	{ä}{{\"a}}1
+	{ö}{{\"o}}1
+	{–}{{-}}1			% falls versehentlich – hereinkopiert wird.
+	%{~}{{\textasciitilde }}1
+}
+%\lstset{texcl=true}
+\input{config_lstlisting_LaTeX}
+
+\usepackage[pdftex,
+	hidelinks,
+	pdfauthor=	{cax}, % Autorname
+	pdfkeywords={},	% Schluesselwoerter
+	pdfdisplaydoctitle=true, 
+	pdftitle=		{},	% Titel
+	pdfsubject=	{}, % Thema
+	%colorlinks=false,
+	%linkcolor=MidnightBlue,
+	%urlcolor=black,
+	%citecolor=black,
+	%%%
+	bookmarksopen=false,
+	%pdffitwindow=true,
+	pdfpagelayout={SinglePage},	% (SinglePage, OneColumn, TwoColumnLeft, TwoColumnRight, TwoPageLeft, TwoPageRight)
+	pdfpagemode={UseNone},	% (UseNone, UseThumbs, UseOutlines, FullScreen, UseOC, UseAttachments)
+	%pagebackref 	=true, 	%zurück-Button im Acrobat-Reader
+]{hyperref}  % hyperref sollte als letztes Paket eingebunden werden.%Infos unter {http://de.wikibooks.org/wiki/LaTeX-W%C3%B6rterbuch:_hyperref}
+
+
+%-------------------- --------------------
+%-------------- Einstellungen ------------
+%-------------------- --------------------
+%% ----- scrheadings (ehemals scrpage2 -----
+	\pagestyle{scrheadings}
+
+	\newcommand{\standardKopfzeile}{
+		\clearpairofpagestyles
+		%\setheadsepline{.4pt}
+		\ohead[\pagemark]{\pagemark}
+		\rehead[\leftmark]{\leftmark}	% linke Seite innen
+		\lohead[\rightmark]{\rightmark} % rechte Seite innen
+		\automark[subsection]{section}
+	}
+	\newcommand{\seitenzahlKopfzeile}{
+		\clearpairofpagestyles
+		\ohead[\pagemark]{\pagemark}
+	}
+	\newcommand{\leereKopfzeile}{
+		\clearpairofpagestyles
+	}
+	\newcommand{\AnhangKopfzeile}{
+		\clearpairofpagestyles
+		\ohead[\pagemark]{\pagemark}
+	}
+	%\standardKopfzeile
+	%\seitenzahlKopfzeile
+	\leereKopfzeile
+%--------------------------
+
+% ----- Kapitelüberschriften formatieren ------
+% --> erst nach dem Inhaltsverzeichnis
+
+
+
+
+%\usepackage{titlesec}
+%\titleformat{\section}
+%{\color{red}\normalfont\Large\bfseries}
+%{\color{Blue}\thesection}{1em}{}
+%%(siehe auch http://texblog.org/tag/titlesec/)
+
+
+
+
+%\setlength{\headheight}{0pt}%Überschriften direkt unter Kopfzeile
+\pagenumbering{Roman} % Römische Seitennummerierung für Vorspann
+	
+%%% %%% Trennungs-Liste %%% %%%
+	\hyphenation{Pa-ket-be-schrei-bung-en Ka-pi-tel}
+%%% %%% %%% %%%
+
+\renewcommand*{\sectfont}{\sffamily\bfseries\boldmath} % Mathe in Überschriften
+
+%\raggedbottom % damit der Inhalt einer nicht füllbaren Seite nicht vertikal verteilt wird. (\raggedbottom, \flushbottom)
+\raggedcolumns % (\raggedcolumns, \flushcolumns) damit der Inhalt einer nicht füllbaren Spalte (mittels multicol-Package) nicht vertikal verteilt wird.
+
+\setlength{\extrarowheight}{2pt} % Zeilenabstand in Tabllen
+
+%EOF

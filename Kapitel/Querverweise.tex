@@ -1,0 +1,23 @@
+\setlength{\columnseprule}{0.5pt}
+%\newpage
+
+\sectionstage[3]{Querverweise}		
+\negAbstand
+%
+\begin{lstlisting}
+\label{TEXT}	% nach Kapitelüberschrift, nach \caption (oder in figure-Umgebung), etc.
+\ref{TEXT}		% Nummer des Referenzierten Elements. (z.B. Abbildungsnummer oder Kapitelnummer)
+\eqref{TEXT} 	% entspricht:(\ref{TEXT})
+\pageref{TEXT}	% Seitenzahl der Seite, auf der sich das Element befindet.
+\subref{TEXT}		% Bei subfigures: die Unter-Bezeichnung: (a)
+\subcaptionref{TEXT}	% 
+\end{lstlisting}
+
+\subsection*{URL's}
+\lstinline|\href{www.abc.com}{Website}|  \href{www.anything.com}{Website}
+
+\noindent\lstinline|\url{www.abc.com}|
+\url{www.abc.com} \newline
+
+\hrule %\vspace{0.5\baselineskip}
+%----- EOF -----

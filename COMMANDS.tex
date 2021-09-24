@@ -1,0 +1,122 @@
+% befehle.tex
+% Eigene Befehle
+
+\input{commands_Abkuerzungen_V1}
+
+\input{commands_farben_V1}
+
+\input{commands_mathe_V1}
+
+% Formatierungsbefehle
+\newcommand{\Paket}[1]{\textcolor{purple}{#1}}
+\newcommand{\Befehl}[1]{\textcolor{NavyBlue}{#1}}	% (blue, NavyBlue)
+\newcommand{\Umgebung}[1]{\textcolor{teal}{#1}}
+\newcommand{\Laenge}[1]{\textcolor{teal}{#1}}		
+\newcommand{\notiz}{\color{Cerulean}}
+
+% Vereinfachungs-Befehle
+\newcommand{\mytitleformat}[1]{\texorpdfstring{#1}{}}
+	% verhindert Fehler, wenn Formatierungen im Titel verwendet werden: \section{ \titelformat{\color{red}} TEXT }
+\newcommand{\scite}[2]{\cite[S.\,#2]{#1}}	% \scite{Jahne12}{123\,f}
+
+\newcommand{\mycolumnbreak}{\columnbreak} % (\columnbreak,\newpage)
+\newcommand{\myHspace}{\hspace{1ex}} % Abstand in Listen Mathematische Symbole
+\newcommand{\myhrule}
+	{	\vspace{-.5\baselineskip} \hrule }
+	
+\newcommand{\mminipage}[2]{\begin{minipage}{#1}#2\end{minipage}}
+\newcommand{\befehlsformat}[1]
+	{%
+	{\ttfamily\small\color{NavyBlue} \textbackslash{#1}}%
+	}
+\newcommand{\todo}[1]{{\textcolor{purple}{TODO: \textasteriskcentered} \color{gray}~#1~\textcolor{purple}{\textasteriskcentered}}}
+	
+%----- Abstände -----
+\newcommand{\negAbstand}{\vspace{-0.55\baselineskip}} % negativer Abstand. Zweck: Abstand zwischen Überschrift und lstlisting-Umgebung oder ähnlichem verringern.
+\newcommand{\posAbstand}{\vspace{0.55\baselineskip}}
+\newcommand{\negspace}{\negAbstand} % Synonym --> Coolere Befehl
+\newcommand{\posspace}{\posAbstand} % Synonym --> Coolere Befehl
+\newcommand{\notizenplatz}{\vspace{5\baselineskip}}
+\newcommand{\notizenplatzx}{\vspace*{5\baselineskip}}
+
+%-----  ------
+%%Befehl \mycirc{..} für Kreis um Buchstaben definieren (usepackage{tikz} notwendig)
+%\newcommand*{\mycirc}[1]{ 
+	%\begin{tikzpicture}[baseline=(C.base)]%
+    %\!\!\!% negativer Abstand
+		%\node[draw,circle,inner sep=1pt](C) {#1};
+		%\!\!\!%negativer Abstand
+  %\end{tikzpicture}
+%}
+
+
+% Development stages (wikibooks.org nachempfunden. vgl. [en.wikibooks.org/wiki/Help:Development_stages])
+\newlength{\stageHeight}
+\setlength{\stageHeight}{1.5ex}
+%\settoheight{\stageHeight}{d}
+\newcommand{\stage}[1]{
+	\ifcase #1 % 0
+		\texorpdfstring{%
+			\settoheight{\stageHeight}{R}%
+			\includegraphics[height=\stageHeight,%
+			trim={0 0.3mm 0 0}]{Bilder/stage0}%
+		}{}%
+	\or % 1
+		\texorpdfstring{%
+			\settoheight{\stageHeight}{R}%
+			\includegraphics[height=\stageHeight,%
+			trim={0 0.3mm 0 0}]{Bilder/stage1}%
+		}{}%
+	\or % 2
+		\texorpdfstring{%
+			\settoheight{\stageHeight}{R}%
+			\includegraphics[height=\stageHeight,
+			trim={0 0.3mm 0 0}]{Bilder/stage2}%
+		}{}%
+	\or % 3
+		\texorpdfstring{%
+			\settoheight{\stageHeight}{R}%
+			\includegraphics[height=\stageHeight,%
+			trim={0 0.3mm 0 0}]{Bilder/stage3}%
+		}{}%
+	\or % 4
+		\texorpdfstring{%
+			\settoheight{\stageHeight}{R}%
+			\includegraphics[height=\stageHeight,%
+			trim={0 0.3mm 0 0}]{Bilder/stage4}%
+		}{}%
+	\else		% >4
+		\textcolor{red}{ND}
+	\fi
+}
+% Beschreibung:
+%%\begin{description}
+	%%\item[\stage{0} Neu]  				Kaum Text
+	%%\item[\stage{1} Erstentwurf]  Keine klare Struktur
+	%%\item[\stage{2} In Arbeit]		Mittl. -- großer Änd.-bed.
+	%%\item[\stage{3} Fortgeschritten]	Geringer Änd.-bed.
+	%%\item[\stage{4} Fertig] 	Kein Änderungsbedarf
+%%\end{description}
+%%Symbole entnommen aus [Wikibooks.org "`Development Stages"' (\url{en.wikibooks.org/wiki/Help:Development_stages})]
+\newcommand{\sectionstage}[2][-1]{%
+	\section[#2]{#2\stage{#1}}% 	\sectionstage{2}{TITEL}
+}
+\newcommand{\subsectionstage}[2][-1]{% 
+	\subsection[#2]{#2\stage{#1}}% 			\subsectionstage{2}{TITEL}
+}
+\newcommand{\subsubsectionstage}[2][-1]{% 
+	\subsubsection[#2]{#2\stage{#1}}% 	\subsubsectionstage{2}{TITEL}
+}
+%
+\newcommand{\sectionstageS}[2][-1]{% X anstatt von * (irgendwie nicht möglich)
+	\section*{#2\stage{#1}}% 	\subsubsectionstage{2}{TITEL}
+}
+\newcommand{\subsectionstageS}[2][-1]{% 
+	\subsection*{#2\stage{#1}}% 	\subsubsectionstage{2}{TITEL}
+}
+\newcommand{\subsubsectionstageS}[2][-1]{% 
+	\subsubsection*{#2\stage{#1}}% 	\subsubsectionstage{2}{TITEL}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

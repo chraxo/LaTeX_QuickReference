@@ -1,0 +1,278 @@
+\pagebreak
+
+\sectionstage[2]{Formatierung des Dokuments}
+\label{cha:DokFormatierung}
+Hinweis: Diese Zusammenfassung geht von der Verwendung einer der Koma-Script-Dokumentklasse aus.
+
+\subsectionstage[0]{Seitenlayout}
+\label{cha:Seitenlayout}
+\textcolor{red}{fehlt (noch)}
+
+\noindent Notizen:
+\begin{itemize}
+	\item siehe auch \todo{\cite[S.\,579]{Braune}}
+	\item raggedbottom, flushbottom, raggedcolumns, flushcolumns
+	\item weitere geometry-Optionen: bindingoffset, inner, outer
+\end{itemize}
+
+\notizenplatz\notizenplatz
+
+\subsectionstage[1]{Dokumenten-Aufbau}
+\begin{lstlisting}
+\documentclass [KLASSENOPTIONEN] {DOKUMENTKLASSE}
+>HEADER<
+\begin{document}
+	Inhalt...
+\end{document}
+\end{lstlisting}
+
+%----- ------
+\subsectionstage[3]{Klassenoptionen}
+%\renewcommand{\arraystretch}{1.5} %Abstand zwischen Zeilen ändern
+(angelehnt an \cite[S.\,9]{l2kurz}) \newline
+\begin{tabular}{L{0.2\linewidth}L{0.65\linewidth}}
+\toprule
+	10pt 11pt 12pt
+	& Schriftgröße (Standard ist 10 pt)
+	\\ \midrule
+	a4paper a5paper
+	& Papierformat
+	\\ \midrule
+	fleqn
+	& Gleichungen linksbündig statt zentriert.
+	\\ \midrule
+	leqno
+	& Gleichungsnummer links statt rechts
+	\\ \midrule
+	titlepage
+	notitlepage
+	& Eigene Seite für Titel und Zusammenfassung? (Standard für report und book: titlepage).
+	\\ \midrule
+onecolumn \linebreak
+twocolumn
+& für ein- oder zweispaltiges Dokument. Die Voreinstellung ist immer onecolumn.
+	\\ \midrule
+oneside \linebreak
+twoside
+& Seitengestaltung für ein- oder zweiseitigen Druck. (Standard: oneside; bei book: twoside)
+\\ \midrule
+DIV=calc	& Satzspiegel automatisch berechnen (statt ``calc'' auch ..,6,7,8,9,10,..)
+\\ \midrule
+BCOR=1cm	&~~~Bindekorrektur
+\\ \midrule
+headings=small &~~~~~~ kleinere Überschriften
+\\ \bottomrule
+\end{tabular}
+
+\bigskip\bigskip
+
+%----- ------
+\noindent\begin{minipage}{\linewidth}
+\subsectionstage[2]{Dokumentklassen}
+Tabelle (entnommen aus \cite[S.\,8\,f]{l2kurz})
+
+\begin{tabular}{L{9ex}L{28ex}}
+\toprule
+	article	
+	& für Artikel in wissenschaftlichen Zeitschriften, kürzere 	Berichte u.v.a.
+\\
+	report
+	&für längere Berichte, die aus mehreren Kapiteln bestehen (Diplomarbeiten, Dissertationen u.ä.)
+\\
+	book
+	&für Bücher
+\\
+	scrartcl, scrreprt, scrbook
+	& {\gray(empfohlen)} Die sog. KOMA-Klassen (vgl.\,\cite{scrguide}) sind Varianten der o.\,g. Klassen mit besserer Anpassung an DIN-Papierformate und „europäische“ Typographie.
+	Zudem erlauben sie mittels Optionen die Anpassung des Layouts.
+\\
+	beamer
+	& für Präsentationen
+\\ \bottomrule
+\end{tabular}
+\end{minipage}
+
+\subsubsectionstage[0]{Schriftarten}
+\label{cha:Schriftarten}
+\textcolor{red}{fehlt (noch)}
+\notizenplatz\notizenplatz
+
+
+% ----- Zeilenabstand -----
+\subsectionstage[3]{Zeilenabstand (\Paket{setspace})}
+\negAbstand
+
+\begin{lstlisting}
+\usepackage[OPT]{setspace}	% OPT: (doublespacing, onehalfspacing, singlespacing)
+\doublespacing	% Ab jetzt Zeilenabstand doppelt
+\onehalfspacing	
+\singlespacing	
+\setstretch{1.8}	% 1.8-facher SA.
+\begin{spacing}{1.8} ... \end{spacing}
+\end{lstlisting}
+
+\subsectionstage[1]{Absätze}
+\label{cha:Absatz}
+%
+\paragraph*{Absatzeinrückung} ~\linebreak
+\lstinline|\parindent 0pt		% Einrückungslänge einstellen.|
+	{\footnotesize\todo{empfohlene Variante?}}%
+%
+\paragraph*{Absatzabstände} ~\linebreak
+\lstinline|\KOMAoptions{parskip=half}| \linebreak
+Weitere Werte für parskip:
+\begin{description}
+	\item[full] vertikaler Abstand + Leerraum (mindestens \lstinline|1em|) am Ende der letzten Absatz-Zeile
+	\item[full--] vertikaler Abstand
+	\item[full+] vertikaler Abstand + Leerraum (mindestens \lstinline|0.33\baselineskip|)
+	\item[full*] vertikaler Abstand + Leerraum (mindestens \lstinline|0.25\baselineskip|)
+	\item[half] vertikaler Abstand (halbe Zeile)
+	\item[never] (selbsterklärend)
+	\item[...] (weitere sind hier nicht aufgeführt)
+\end{description}
+
+% -----  -----
+\subsectionstage[1]{Formatierung der Überschriften ändern}
+\label{cha:ChapFormat}
+Überschriften-Farben ändern (nur mit Komascript-Dokumentklasse):
+\begin{lstlisting}
+\addtokomafont{section}{\color[HTML]{841010}}
+\addtokomafont{subsection}{\color[HTML]{844A10}}
+\addtokomafont{subsubsection}{\color[HTML]{848410}}
+\end{lstlisting}
+
+(siehe \scite{scrguide}{56f})
+
+
+
+
+%\negAbstand
+%\begin{lstlisting}
+%\usepackage{titlesec}		%% ??? Fehler!
+%\titleformat{\section}
+%{\color{red}\normalfont\Large\bfseries}
+%{\color{red}\thesection}{1em}{}
+%\end{lstlisting}
+siehe auch \url{http://texblog.org/tag/titlesec/}
+
+
+
+% ----- Seitenspiegel / Seitenränder -----
+%\columnbreak
+\subsection{Satzspiegel / Seitenränder}
+
+
+%----- -----
+\subsubsectionstage[4]{mittels DIV}
+Typographisch günstigste Methode: Dokumentclass-Option {\green \lstinline|DIV=calc|}.
+Wird eine Zahl gesetzt ({z.\,B.\,\green\lstinline|DIV=9|}), kann der Seitenrand beeinflusst werden.
+
+
+%----- -----
+\subsubsectionstage[4]{Seitenränder mit \Paket{geometry}}
+\negAbstand
+\begin{lstlisting}
+\usepackage[
+	left=1.6cm, right=1cm,
+	top=0.5cm, bottom=0cm, 
+	includefoot,	% Fußzeile NICHT ignorieren
+	includehead,	% Kopfzeile NICHT ignorieren
+	%includeheadfoot	% includefoot + includehead
+]{geometry} 
+\end{lstlisting}
+Werden manche der Werte (left, right, top, bottom) weggelassen, so wird der Rest automatisch bestimmt.
+
+%----- -----
+\subsubsectionstage[2]{Überblick: Layout-Variablen}\label{sec:layout_var}
+
+\footnotesize
+\addtolength{\leftmargini}{-10pt}
+\begin{itemize}
+	\item Die obere Referenzlinie hat einen Abstand von 1 inch zum oberen Seitenrand
+	\item Die linke Referenzlinie hat einen Abstand von 1 inch zum linken Seitenrand
+	\item \lstinline|\topmargin|: Abstand zwischen der oberen Referenzlinie und der Oberkante des Headers
+	\item \lstinline|\headheight|: Höhe des Headers
+	\item \lstinline|\headsep|: Abstand zwischen Unterkante des Headers und dem Body
+	\item \lstinline|\textheight|: Höhe des Body
+	\item \lstinline|\footskip|: Abstand von der Unterkante des Body bis zur \emph{Unterkante} des Footers
+	\item \lstinline|\oddsidemargin|: Abstand zwischen der linken Referenzlinie und linken Kante des Headers
+	\item \lstinline|\textwidth|: Breite des Body
+	\item \lstinline|\marginparsep|: Abstand von der rechten Seite des Body bis zur linken Kante der Margin notes
+	\item \lstinline|\marginparwidth|: Breite der Margin notes
+	\item \lstinline|\marginparpush|: Abstand zwischen Unterkante einer Margin note und der Oberkante der nächsten Margin note
+\end{itemize}
+\addtolength{\leftmargini}{10pt}
+
+\normalsize
+
+	Im Normalfall sollten diese Variablen \textbf{nur gelesen}, aber \textbf{nicht geändert} werden.
+	Zum Einstellen der Seitenränder sollte zum Beispiel das Paket \Paket{geometry} verwendet werden.
+
+Bei mehrspaltigem Layout ist die Variable \lstinline|\linewidth| anstatt \lstinline|\textwidth| nützlich, die die Breite der Zeile (ungefähr die Spaltenbreite) angibt.
+
+Tipp: Mit \lstinline|\enlargethispage{1\baselineskip}| einmalig die textheight der aktuellen Seite um 1~Zeile vergrößern.
+
+\subsectionstage[2]{Anhang}
+\begin{lstlisting}
+\appendix
+\renewcommand{\thechapter}{\Alph{chapter}}  % römische Kapitelnummerierung
+
+\makeatletter
+\@addtoreset{figure}{section}
+\@addtoreset{table}{section}
+\makeatother
+
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\renewcommand{\thetable}{\thesection.\arabic{table}}
+\end{lstlisting}
+\notizenplatz
+
+% ----- Kopf-/Fußzeilen -----
+\input{Kapitel/Seitennummerierung}
+\input{Kapitel/KopfFusszeilen}
+
+% ----- Mehrspaltiger Textsatz -----
+\input{Kapitel/Mehrspaltig}
+
+% ----- Querformat -----
+\noindent\begin{minipage}{\linewidth}
+\subsectionstage[3]{Querformat (einzelne Seiten)}
+\negAbstand
+
+\begin{lstlisting}
+\usepackage{pdflscape} 	% Querformat wird in PDF-Ausgabe gedreht dargestellt.
+\usepackage{lscape}			% Querformat bleibt in PDF-Ausgabe aufrecht
+\begin{landscape} ... \end{landscape}
+\end{lstlisting}
+\end{minipage}
+%
+Komplettes Dokument im Querformat: Dokumentoption "`landscape"'.
+
+\subsectionstage[3]{PDF-Ausgabe \& \Paket{hyperref}}
+\Paket{hyperref} sollte als letztes aller Pakete eingebunden werden (weitere Infos unter \url{http://de.wikibooks.org/wiki/LaTeX-W%C3%B6rterbuch:_hyperref}).
+\begin{lstlisting}
+\usepackage[pdftex,
+	hidelinks,
+	pdfauthor=	{cax},	% Autorname
+	pdfkeywords={},			% Schluesselwoerter
+	pdfdisplaydoctitle=true, 
+	pdftitle=		{},			% Titel
+	pdfsubject=	{}, 		% Thema
+	%colorlinks=false,
+	%linkcolor=MidnightBlue,
+	%urlcolor=black,
+	%citecolor=black,
+	%%%
+	bookmarksopen=false,
+	%pdffitwindow=true,
+	pdfpagelayout={SinglePage},	% (SinglePage, OneColumn, TwoColumnLeft, TwoColumnRight, TwoPageLeft, TwoPageRight)
+	pdfpagemode={UseNone},	% (UseNone, UseThumbs, UseOutlines, FullScreen, UseOC, UseAttachments)
+	%pagebackref 	=true, 	%zurück-Button im Acrobat-Reader
+]{hyperref} 
+\end{lstlisting}
+
+\notizenplatz
+\notizenplatz
+
+\hrule \vspace{0.5\baselineskip}
+%----- EOF -----

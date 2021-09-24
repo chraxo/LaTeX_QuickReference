@@ -1,0 +1,47 @@
+% Befehle definieren
+\newcommand{\htmlcb}[1]
+{	
+	%\textcolor[HTML]{#1}{\rule{1.1em}{2.2ex}} \mbox{\footnotesize #1}
+	%\newline
+	%\colorbox[HTML]{#1}{#1}
+	\textbf{\textcolor[HTML]{#1}{#1}}
+}
+\newcommand{\colorline}[4]{%
+\htmlcb{#1} \htmlcb{#2} \htmlcb{#3} \htmlcb{#4} \newline
+}
+
+%\columnbreak
+% ----- Kapitelüberschriften formatieren ------
+%%Farbset1:
+%\addtokomafont{section}{\color[HTML]{3939FC}}
+%%Farbset2:
+
+%Farbset ausgeben:
+%HTML:
+% 841010 844A10 848410 4A8410 
+% 84104A BB1616 E62828 108410  
+% 841084 28E6E6 16BBBB 10844A
+% 4A1084 101084 104A84 108484
+
+%\noindent%
+%\colorline{841010}{844A10}{848410}{4A8410}
+%\colorline{84104A}{BB1616}{E62828}{108410}
+%\colorline{841084}{28E6E6}{16BBBB}{10844A}
+%\colorline{4A1084}{101084}{104A84}{108484}
+
+
+\addtokomafont{section}{\color[HTML]{841010}}
+\addtokomafont{subsection}{\color[HTML]{844A10}}
+\addtokomafont{subsubsection}{\color[HTML]{848410}}
+
+
+
+%\addtokomafont{section}{\color[hsb]{0.65,0.9,0.7}}
+%\addtokomafont{subsubsection}{\color[hsb]{0.65,0.9,0.99}}
+%\addtokomafont{subsection}{\color[hsb]{0.65,0.9,0.9}}
+
+%\usepackage{titlesec}
+%\titleformat{\section}
+%{\color{red}\normalfont\Large\bfseries}
+%{\color{Blue}\thesection}{1em}{}
+%%(siehe auch http://texblog.org/tag/titlesec/)

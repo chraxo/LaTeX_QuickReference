@@ -1,0 +1,126 @@
+%\columnbreak
+\mycolumnbreak
+
+
+\sectionstage[2]{Quelltexte}
+\subsectionstage[4]{verbatim-Umgebung}
+\negAbstand
+\begin{lstlisting}
+	\verb|Direkt ausgegebener Text|
+	\begin{verbatim}
+		Direkt ausgegebener Text
+	\end{verbatim}
+\end{lstlisting}
+\Befehl{verb} und \Umgebung{verbatim} können nicht als Paramter an andere Befehle übergeben werden.
+
+\subsectionstage[2]{Quelltext (Paket \Paket{listings})}
+
+siehe auch: \url{http://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings}
+
+Für escape-Inside-Option hier nachschlagen: \url{http://tex.stackexchange.com/questions/110268/texcl-escapeinside-and-single-character-comments-with-listings-package}
+
+\subsubsection*{Umlaute bei utf8-Codierung}
+{\footnotesize
+Bei Verwendung der Kodierung utf8 (\lstinline|\usepackage[utf8]{inputenc}|) können Umlaute (ä ö ü ß) nicht ohne weiteres  dargestellt werden. Abhilfe (Quelle \url{http://uweziegenhagen.de/?p=1500}; \qquad\qquad\qquad 2014):
+}
+%
+\begin{lstlisting}
+\lstset{literate=%
+    {Ö}{{\"O}}1
+    {Ä}{{\"A}}1
+    {Ü}{{\"U}}1
+    {ß}{{\ss}}1
+    {ü}{{\"u}}1
+    {ä}{{\"a}}1
+    {ö}{{\"o}}1
+    %{~}{{\textasciitilde}}1
+}
+ %ODER:
+\lstset{texcl=true} % Schriftsatz mit LaTeX. (Unter Umständen unerwünscht.)
+\end{lstlisting}
+
+%\columnbreak
+\subsubsection{\Paket{listings}: Einstellungen}
+\negAbstand
+\lstset{mathescape = true}
+
+\begin{lstlisting}
+\usepackage{listings}
+\lstset{
+		language		=	[LaTeX]{TeX},		%[dialect]{language}
+		% Mögliche Sprachen (Auswahl): Assembler, Basic, C++, Delphi, Fortran, Gnuplot, HTML, Java, Mathematica, Matlab, Octave, Perl, PHP, Python, Scilab, SQL, TeX, [LaTeX]{TeX}, VHDL, XML
+		%escapeinside = {((**} {**xx},		% ???
+		% escapebegin = {((**} 						% ???
+		% escapeend		= {**))}						% ???
+\end{lstlisting}
+\vspace{-1\baselineskip}
+\begin{lstlisting}
+		basicstyle	=	\ttfamily,
+		basicstyle	=	\small,
+		identifierstyle=\ttfamily,
+		commentstyle=	\ttfamily,
+		commentstyle=	\color{gray},
+		stringstyle =	\ttfamily,
+		keywordstyle=	\ttfamily,
+		keywordstyle=	\color{OliveGreen},
+\end{lstlisting}
+\vspace{-1\baselineskip}
+\begin{lstlisting}
+		numbers			=	left,  			% (none, left, right)
+		numberstyle	=	\tiny, 			
+		stepnumber	=	1,    			% Step between two line-numbers
+		numbersep		=	5pt,  			% How far are line-numbers from code
+		backgroundcolor=\color{white},		
+		frame				=	none,       % A frame around the code
+		tabsize			=	2,					% Default tab size
+		captionpos	=	b,          % Caption-position = bottom
+\end{lstlisting}
+
+\vspace{-1\baselineskip}
+\begin{lstlisting}
+		breaklines	=	true,       % Automatic line breaking?
+		breakatwhitespace=false,  % Automatic breaks only at whitespace?
+		showspaces	=	false,      % Dont make spaces visible
+		showstringspaces = false	% Leerzeichen in Strings anzeigen
+		showtabs		=	false,      % Dont make tabls visible
+		columns			=	fixed, 			% Column format  (flexible, fixed or fullflexible)
+		% morekeywords   = {Wort3, Wort4}
+		% deletekeywords = {Wort1, Wort2}
+
+\end{lstlisting}
+\vspace{-1\baselineskip}
+\begin{lstlisting}
+	%	% Escape to LaTeX:
+	%	mathescape = true, 	% $a=x$ Mathemodus ermöglichen
+		escapechar = {$^2$},		% Buchstabe zum Verlassen und Zurückkehren (LaTeX-Modus)
+	% escapeinside={$^2$}{$^2$},	% Alternative zu escapechar
+	%	escapebegin= {},		% wird zu Beginn des Escape-Modus eingefügt
+	%	escapeend= {}				% wird zum Ende des Escape-Modus eingefügt
+	}
+\end{lstlisting}
+\lstset{mathescape = false}
+
+\noindent\begin{minipage}{\linewidth}
+\subsubsection{\Paket{listings}: Verwendung}
+\negAbstand
+
+\begin{lstlisting}
+\begin{lstlisting}		% Abgesetzter Quellcode
+	QUELLCODE
+\end {lstlisting}
+\end{lstlisting}
+
+\end{minipage}
+
+\begin{lstlisting}
+\lstinline|QUELLCODE|	% Inline-Quellcode ohne Zeilenumbrüche
+\end{lstlisting}
+
+\begin{lstlisting}
+\lstinputlisting[language=Python, firstline=37, lastline=45]{source_filename.py} // Ganze Datei einlesen.
+\end{lstlisting}
+
+%\notizenplatz
+
+\hrule \vspace{0.5\baselineskip}
+%----- EOF -----

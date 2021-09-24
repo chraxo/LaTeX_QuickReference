@@ -1,0 +1,155 @@
+%-------------------- --------------------
+%------  -------------------
+%-------------------- --------------------
+
+%%% HEADER einbinden %%%
+\input{HEADER}
+\input{COMMANDS}
+
+%%% Dokument %%%
+\begin{document}
+
+\pagenumbering{arabic}
+
+\input{Kapitel/0a_Titelseite}
+
+\setlength{\columnseprule}{0.5pt}
+
+
+
+%----- Inhaltsverzeichnis -----
+\clearpage
+\begin{multicols}{2}
+\setcounter{tocdepth}{3} % Tiefe des Inhaltsverzeichnisses
+\tableofcontents
+
+\vspace{0.5\baselineskip} 
+\hrule
+
+\end{multicols}
+
+%----- Vorwort -----
+\clearpage
+\standardKopfzeile
+\begin{multicols*}{2}
+
+\addtocounter{section}{-1}
+\input{Kapitel/Vorwort}	%% Bei Kompilierungsfehler diese Zeile vorübergehend auskommentieren.
+\hrule
+
+%\columnbreak
+\input{todo}
+\hrule
+
+\end{multicols*}
+
+%----- BEGINN -----
+\clearpage
+%\begin{multicols*}{2}
+
+\newcommand{\partcolor}{\color{NavyBlue}}
+
+%\standardKopfzeile
+
+\begin{multicols*}{2}
+\input{HEADER/formatierung_ueberschriften}
+\input{Kapitel/FormatierungText}
+\input{Kapitel/Zeichen}
+\input{Kapitel/Typographie}
+\input{Kapitel/Querverweise}
+\input{Kapitel/Inhaltsverzeichnis}
+\input{Kapitel/Zitieren.tex}
+\input{Kapitel/FormatierungDokument}
+\input{Kapitel/Farben}
+\input{Kapitel/Befehle}
+
+
+\input{Kapitel/Gleitumgebungen}
+\input{Kapitel/Bilder}
+\input{Kapitel/Listen}
+\input{Kapitel/Tabbing}
+\input{Kapitel/Tabellen}
+\input{Kapitel/Mathematik}
+\input{Kapitel/DiagrammePlotten}
+\input{Kapitel/Quelltext}
+
+\input{Kapitel/arbeitshilfen}
+
+\clearpage
+\end{multicols*}
+%----- Anhang -----
+%%%%%%%%%%%%%%%%%%%%%%%%
+	\addsec{Anhang}
+	\appendix	% schaltet Überschriftennummerierung auf A,B,C um.
+	\AnhangKopfzeile
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{Kapitel/BeispielDokument}
+\input{Kapitel/Sonderzeichen}	
+\input{Kapitel/Anhang_Paketliste}
+\input{Kapitel/Anhang_Umgebungsliste}	
+\input{Kapitel/Sonstiges} 		
+\input{Kapitel/Literatur}			
+
+\input{Anhang/texniccenter}	
+
+% ----- Weitere -----
+\sectionstage[1]{Weiteres}
+\subsection{Wo finde ich \dots?}
+\begin{description}
+	\item[Zeichnen]
+	\item[Plotten]
+	\item[Wochentage/Uhzeiten] scrdate, scrtime \scite{scrguide}{235ff}
+\end{description}
+
+\subsection{Schriftarten}
+siehe Holger Brunner (auch gute Typografie-Infos)
+\begin{lstlisting}
+\usepackage[scaled=0.92]{helvet}
+                        {DejaVuSans}
+\end{lstlisting}
+ohne scaled-Funktion: dejavu
+
+\subsection{Testen}
+\lstinline{\phantomsection nach \chapter einfügen % Wenn der Link im Literaturverzeichnis nicht stimmt.}
+
+\subsection{Nützliche Arbeitshilfen und Schreibhilfen}
+\begin{itemize}
+	\item \Paket{blindtext}: Befehle \lstinline|\blindtext| und \lstinline|\Blindtext|. Erzeugen "`sinnlosen"' Text zur Prüfung des Schriftbildes.
+	\item Randnotizen: 
+	\begin{lstlisting}
+\marginpar[evenpage]{oddpage} 
+\marginline[]{} 	% Flattersatz
+\reversemarginpar 	% Ab jetzt Randnotizen auf der gegenüberliegenden Seite
+\normalmarginpar 	% Randnotizen wieder auf der Standard-Seite
+\end{lstlisting}
+\end{itemize}
+
+\subsection{Liste bisher unbekannter Pakete}
+vgl. \url{matthiaspospiech.de}
+\begin{verbatim}
+[l2tabu,orthodox]{nag}	% Auf veraltete Pakete etc. prüfen
+{fix-cm}
+codesection
+templatetools
+selinput
+grffile
+tabu
+ltxtable
+floatrow
+\end{verbatim}
+
+\subsection{Weiteres}
+\begin{lstlisting}
+\showhyphens{Begriff} % Bindestriche anzeigen
+\begin{sloppypar}	% großzügige Formatierung (schlechtes Layout)  (Blocksatz strenger, weniger Trennungen)
+\end{lstlisting}	
+
+%% Leerseite
+\newpage
+\qquad
+
+\end{document}
+
+\hrule \vspace{0.5\baselineskip}
+%----- EOF -----

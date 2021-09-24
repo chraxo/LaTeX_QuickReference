@@ -1,0 +1,93 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\columnbreak
+\subsectionstage[3]{Kopf-/ Fußzeilen (\Paket{scrpage2})}
+\negAbstand
+
+\begin{lstlisting}
+\usepackage{scrlayer-scrpage}
+\pagestyle{scrheadings}	% Auf den neuen Seitenstil umschalten
+		% Auf der ersten Seite eines Kapitels wird i.d.R. automatisch auf den Seitenstil scrplain umgeschaltet. Auf der nächsten Seite gilt dann wieder scrheadings.
+\end{lstlisting}
+
+\noindent\begin{minipage}{\linewidth}
+
+\subsubsectionstage[4]{Löschen der Stile (um "`frisch"' anzufangen)}
+\negAbstand
+
+\begin{lstlisting}
+ \clearscrheadfoot	% Beide Stile (scrheadings, scrplain) komplett leeren.
+ \clearscrheadings	% Stil scrheadings komplett leeren
+ \clearscrplain			% Stil scrplain komplett leeren
+\end{lstlisting}
+\end{minipage}
+\negAbstand
+
+\subsubsectionstage[3]{Definition}
+\negAbstand
+
+\begin{lstlisting}
+\ihead[Text für scrplain-Stil] 
+		{Text für scrheadings-Stil}
+\ihead{Kopfzeile Innen}
+\chead{Kopfzeile Mitte}
+\ohead{Kopfzeile Außen}
+\ifoot{Fußzeile Innen}
+\cfoot{Fußzeile Mitte}
+\ofoot{Fußzeile Außen}
+\end{lstlisting}
+
+%\negAbstand
+%\begin{minipage}{0.7\linewidth}
+%\centering
+%\fbox{\includegraphics[width=\linewidth]{Bilder/scrguide_S216_scrpage2Befehle}}
+%\end{minipage}
+
+\posAbstand
+\subsubsectionstage[3]{Befehle für automatischen Text\hspace{-0.5ex}}\vspace{-0.6\baselineskip}
+\begin{lstlisting}
+\pagemark		% Seitenzahl.
+\thepage		% Seitenzahl. (Alternative).
+\automark[<rechteSeite>]{<linkeSeite>}	% Definiert \rightmark und \leftmark. (chapter, section, subsection, ...)
+\rightmark	% z.B. Kapitel-Name incl.Nr.
+\leftmark		% z.B. Section-Name incl.Nr. (\leftmark nur bei Dokumentoption "`twoside"' verfügbar)
+\headmark		% 
+\manualmark	% 
+\end{lstlisting}
+
+\subsubsectionstage[3]{Kapitel-Nummerierung ausschalten}
+\label{cha:KapNumAus}
+\todo{Quelle}
+\negAbstand
+\begin{lstlisting}
+\renewcommand*{\chaptermarkformat}{} 
+\renewcommand*{\sectionmarkformat}{}
+\renewcommand*{\subsectionmarkformat}{}
+
+% Orignalwerte  (Nummerierung eingeschaltet): 
+\renewcommand{\chaptermarkformat} {\chapappifchapterprefix{\ }\thechapter\autodot\enskip}
+\renewcommand*{\sectionmarkformat} {\thesection\autodot\enskip}
+\renewcommand*{\subsectionmarkformat} {\thesubsection\autodot\enskip}
+\end{lstlisting}
+
+\subsubsectionstage[3]{Schriftformatierung}
+\negAbstand
+\begin{lstlisting}
+\renewcommand*{\headfont} {\normalfont \bfseries}	% Schriftart für Kopf- und Fußzeile
+\renewcommand*{\footfont} {\normalfont \itshape} % Von der Kopfzeile abweichende Schriftart für die Fußzeile.
+\renewcommand*{\pnumfont} {\normalfont} % Von headfont und footfont abweichende Formatierung für Seitenzahlen
+\end{lstlisting}
+
+\subsubsectionstage[3]{Linien}
+\setlength{\columnseprule}{0.5pt}
+\negAbstand
+\begin{lstlisting}
+\setheadsepline[\textwidth]{.4pt} % Linie unter der Kopfzeile
+\setfootsepline{.4pt} 	% Linie über der Fußnote
+
+\setheadtopline{2pt}[\color{red}]	% Linie über der Kopfzeile
+\setfootbotline{2pt}		% Linie unter der Fußnote
+\end{lstlisting}
+
+\bigskip
+\myhrule
+\bigskip

@@ -1,0 +1,33 @@
+%%%%%%%%%%%%%%%%%%%
+\mycolumnbreak
+\sectionstage[1]{Gleitumgebungen}
+
+	Gleitende Umgebungen: figure, table.
+	Mit h, t, b, p kann die bevorzugte Ausgabe-Stelle angegeben werden.
+\begin{lstlisting}
+\begin{figure}[htbp]	% h(ier), t(op), b(ottom), p(age)
+	\dots
+\end{figure}
+\end{lstlisting}
+
+\subsubsection{Weitere Befehle}
+\begin{lstlisting}
+\clearpage		% vor \clearpage werden alle Gleitumgebungen ausgegeben und dann eine neue Seite begonnen.
+\pagebreak		% Es wird eine neue Seite begonnen (kein Einfluss auf Gleitumgebungen). 
+\end{lstlisting}
+\todo{caption, label}
+
+\subsection{Paket \Paket{placeins}}
+\begin{lstlisting}
+\usepackage[above, below]{placeins} 
+\FloatBarrier		% Alle Gleitumgebungen müssen vor \FloatBarrier ausgegeben werden.
+% Mit den Optionen above, below darf die Gleitumgebung auch davor (danach) ausgegeben werden, sofern es sich um die selbe Seite handelt.
+\end{lstlisting}
+
+\subsection{Paket \Paket{caption}}
+Aussehen \& Formatierung anpassen
+
+subpcaption: Bilder nebeneinander (siehe \ref{sec:bilder_neben})
+
+\hrule \vspace{0.5\baselineskip}
+%----- EOF -----

@@ -1,0 +1,185 @@
+%%%%%%%%%%%%%%%%%%%%%%%
+\pagebreak
+
+\setlength{\columnseprule}{0.5pt}
+%\addsec{\partcolor---Farben---}
+\sectionstage[3]{Farben \Paket{(color}, \Paket{xcolor)}}
+\label{cha:Farben}
+
+\subsectionstage[3]{Farben-Befehle}
+\negAbstand
+\begin{lstlisting}
+\pagecolor{FARBE} 	% Seitenfarbe ändern
+\textcolor{FARBE}{TEXT}	% Farbiger Text
+\colorbox{FARBE}{TEXT}	% Farbig hinterlegt
+\fcolorbox{RAHMENFARBE}{HINTERGRUNDFARBE}{TEXT}
+\color{FARBE}			% Textfarbe ab jetzt
+\end{lstlisting}
+
+%\newcommand{\cb}[1]{\colorbox{#1}{\textcolor{#1}{T}} \mbox{#1} \linebreak}
+\newcommand{\cb}[1]{\textcolor{#1}{\rule{1.1em}{2.2ex}} \mbox{\footnotesize #1} \newline}
+
+\setlength{\columnseprule}{0pt}
+\noindent\begin{minipage}{\linewidth}
+
+\subsectionstage[4]{Vordefinierte Standard-Farben\hspace{-0.8ex}}
+\vspace{-0.5\baselineskip}
+\begin{lstlisting}
+\usepackage{xcolor}
+\end{lstlisting} \vspace{-1\baselineskip}
+
+
+\begin{multicols}{3}
+\noindent
+\cb{yellow}
+\cb{orange}
+\cb{red}
+\cb{purple}
+\cb{pink}
+%
+\cb{magenta}
+\cb{violet}
+\cb{blue}
+\cb{cyan}
+\cb{teal}
+%
+\cb{green}
+\cb{lime}
+\cb{olive}
+%
+\cb{brown}
+\cb{black} \cb{darkgray} \cb{gray} \cb{lightgray} \cb{white}
+\end{multicols}
+%\end{minipage}
+\end{minipage}
+
+\posAbstand
+
+\noindent\begin{minipage}{\linewidth}
+\subsectionstage[4]{Weitere vordefinierte Farben}
+
+\lstinline|\usepackage[dvipsnames]{xcolor}|
+
+\negAbstand
+
+\setlength{\columnseprule}{0pt}
+	\begin{multicols}{2}
+\noindent
+%\newcommand{\cb}[1]{\colorbox{#1}{\textcolor{#1}{T}} \mbox{#1} \linebreak} % nicht klar, warum hier erneute Definition notwendig ist. Anderfalls gibt es jedenfalls einen Error.
+\cb{Yellow}
+\cb{Goldenrod}
+\cb{Dandelion}
+\cb{YellowOrange}
+\cb{BurntOrange}
+\cb{Orange}
+\cb{Peach}
+\cb{Melon}
+\cb{Apricot}
+\cb{Tan}
+\cb{RedOrange}
+\cb{Red}
+\cb{OrangeRed}
+\cb{Maroon}
+\cb{Mahogany}
+\cb{RawSienna}
+\cb{Brown}
+\cb{Sepia}
+\cb{RedViolet}
+%
+\cb{RubineRed}
+\cb{Rhodamine}
+\cb{CarnationPink}
+\cb{Salmon}
+\cb{WildStrawberry}
+\cb{Magenta}
+\cb{VioletRed}
+\cb{Lavender}
+\cb{Thistle}
+\cb{Orchid}
+\cb{Purple}
+\cb{Fuchsia}
+\cb{DarkOrchid}
+\cb{Mulberry}
+\cb{Plum}
+
+\end{multicols}
+\end{minipage}
+
+\begin{minipage}{\linewidth}
+\begin{multicols}{2}
+
+\cb{Periwinkle}
+\cb{Violet}
+\cb{RoyalPurple}
+\cb{CadetBlue}
+\cb{BlueViolet}
+\cb{Blue}
+\cb{NavyBlue}
+\cb{RoyalBlue}
+\cb{Cerulean}
+\cb{Cyan}
+\cb{ProcessBlue}
+\cb{CornflowerBlue}
+\cb{SkyBlue}
+\cb{MidnightBlue}
+\cb{Turquoise}
+\cb{Aquamarine}
+\cb{BlueGreen}
+\cb{TealBlue}
+\cb{Emerald}
+\cb{JungleGreen}
+\cb{PineGreen}
+\cb{SeaGreen}
+\cb{Green}
+\cb{ForestGreen}
+\cb{OliveGreen}
+\cb{GreenYellow}
+\cb{SpringGreen}
+\cb{YellowGreen}
+\cb{LimeGreen}
+\cb{Black}
+\cb{Gray}
+\cb{White}
+\end{multicols}
+\end{minipage}
+\setlength{\columnseprule}{0.5pt}
+
+\subsectionstage[3]{Benutzerdefinierte Farben}
+%\negAbstand
+Erlaubte Farmodelle: natural, rgb, cmy, cmyk, hsb, gray, RGB, HTML, HSB, Gray.
+\begin{lstlisting}
+\textcolor[rgb]{0.1,0.2,0.3}{TEXT}
+
+\definecolor{MYCOL}{rbg} {0.5,0.4,0.7} % red, green, blue [0,1]
+\definecolor{MYCOL}{RGB} {60,23,144}		% Red, Green, Blue [0,255]
+%\definecolor{MYCOL}{cmy} {0.5,0.4,0.7}	% cyan, magenta, yellow [0,1]
+\definecolor{MYCOL}{cmyk} {0.5,0.4,0.7,0.3}	% cyan, magenta, yellow, black [0,1]
+\definecolor{MYCOL}{gray} {0.4} % [0,1]
+\definecolor{MYCOL}{HTML} {AFFE90}          %[000000,..., FFFFFF]
+\definecolor{MYCOL}{hsb} {0.5,0.4,0.7} % hue,saturation,brightness [0,1]
+\end{lstlisting}
+Empfehlung: HSB-Farbraum (auch "`HSV"'). {\footnotesize (siehe \url{https://de.wikipedia.org/wiki/HSV-Farbraum})}
+
+%\definecolor{javared}{rgb}{0.6,0,0} % for strings
+%\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+%\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+%\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+
+%-------------------
+\negAbstand
+\subsectionstage[2]{Farbige Mathematik}
+In Mathe-Umgebung:
+\begin{lstlisting}
+\textcolor{red]{...}	% wie gewohnt
+\color{red}						% wie gewohnt
+Inline auch: \textcolor{red}{$Mathe$}
+oder:
+\textcolor{red}{
+	\parbox{\linewidth}{
+		\begin{equation} ...
+		\end{equation}
+	}
+}
+\end{lstlisting}
+\hrule \vspace{0.5\baselineskip}
+%----- EOF -----

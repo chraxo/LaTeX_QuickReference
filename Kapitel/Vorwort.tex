@@ -1,0 +1,35 @@
+%\pagebreak
+\sectionstage[3]{Vorwort}
+Diese QuickReferenz soll dem schnellen Nachschlagen von \LaTeX-Wissen dienen.
+Dabei liegt der Schwerpunkt auf einer besonders kompakten, aber dennoch eindeutigen Darstellungsweise. 
+Daher eignet sich die QuickReference vor Allem für fortgeschrittene \LaTeX-Nutzer.
+\LaTeX-Einsteiger sollten zunächst einen der zahlreichen sehr guten Einführungskurse durcharbeiten\footnote{Empfehlungen für kostenlose \LaTeX-Einführungen: \cite{l2kurz} (50 Seiten), \cite{Niebler} (416 Vorlesungsfolien), \cite{Quaritsch}}.
+
+%Warum habe ich mir die Mühe für diese QuickReference gemacht? -- Zum einen hat mir eine solche Übersicht selbst gefehlt.
+%Zum anderen kann ich damit etwas zur Nutzerfreundlichkeit von \LaTeX beitragen.
+
+Die folgenden Prinzipien werden in der QuickReference verfolgt: 
+\begin{itemize}
+	\item Zuerst wird das Ergebnis des \LaTeX-Codes gezeigt, dann der zugrunde liegende \LaTeX-Code.
+	\item \LaTeX-Befehle werden blau dargestellt\footnote{Ausnahme: Befehle mit Sonderzeichen können leider nicht farblich hervorgehoben werden, da dies vom Paket \Paket{listings} nicht unterstützt wird. 
+	Ebenso werden die Schrägstriche  \texttt{\textbackslash} vor den Befehlen nicht hervorgehoben.}:  \lstinline|\LaTeX|.
+	\item Pakete werden \Paket{rot} dargestellt.
+	Sie müssen im \LaTeX-Code mit \newline\lstinline|\usepackage{Paketname}| geladen werden, \emph{bevor} der Befehl \newline\lstinline|\begin{document}| auftaucht.
+	\item Rote Schriftfarbe zeigt an, dass hier Informationen in der QuickReferenz fehlen.
+\end{itemize}
+
+\columnbreak
+\vspace*{1em}
+
+\noindent
+Da die QuickReferenz nicht komplett fertig gestellt wurde, wird zu den Kapiteln und Unterkapiteln mithilfe folgender Symbole%
+\footnote{Symbole entnommen aus [Wikibooks.org "`Development Stages"' (\url{http://en.wikibooks.org/wiki/Help:Development_stages})], zuletzt abgerufen am 08.12.2017}
+ der Fortschritt des jeweiligen Kapitels angegeben:
+\begin{description}
+	\item[\stage{0} Neu]  				Kaum Text
+	\item[\stage{1} Erstentwurf]  Keine klare Struktur
+	\item[\stage{2} In Arbeit]		Mittl. -- großer Änd.-bed.
+	\item[\stage{3} Fortgeschritten]	Geringer Änd.-bed.
+	\item[\stage{4} Fertig] 	Kein Änderungsbedarf
+\end{description}
+

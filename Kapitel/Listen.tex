@@ -1,0 +1,83 @@
+%%%%%%%%%%%%%%%%%%
+\pagebreak
+\sectionstage[2]{Listen / Aufzählungen}
+
+%%%%% itemize %%%%%
+\begin{multicols}{2}
+\begin{itemize} 
+	\item TEXT
+	\item TEXT
+\end{itemize}
+
+\noindent\begin{minipage}{\linewidth}
+\begin{lstlisting}
+\begin{itemize} 
+	\item TEXT
+	\item TEXT
+\end{itemize}
+\end{lstlisting}
+\end{minipage}
+\end{multicols}
+
+\hrule
+
+%%%%% enumerate %%%%%
+\begin{multicols}{2}
+\begin{enumerate} 
+	\item TEXT
+	\item TEXT
+\end{enumerate}
+
+\noindent\begin{minipage}{\linewidth}
+\begin{lstlisting}
+\begin{enumerate} 
+	\item TEXT
+	\item TEXT
+\end{enumerate}
+\end{lstlisting}
+\end{minipage}
+\end{multicols}
+
+\hrule
+
+%%%%% description %%%%%
+\begin{multicols}{2}
+
+\begin{description} 
+	\item[First] TEXT
+	\item[Second] TEXT
+\end{description}
+
+\noindent\begin{minipage}{\linewidth}
+\begin{lstlisting}
+\begin{description} 
+	\item[First] TEXT
+	\item[Second] TEXT
+\end{description}
+\end{lstlisting}
+\end{minipage}
+\end{multicols}
+
+\vspace{-0.5\baselineskip}
+\noindent Einzug verändern:\newline
+\lstinline|\addtolength{\leftmargini}{-20pt}|
+
+\subsection{Paket \Paket{enumerate}}
+Die Nummerierungsart in der Umgebung \Umgebung{enumerate} kann verändert werden.
+%%%\negAbstand
+\begin{lstlisting}
+\usepackage{enumerate}
+\begin{enumerate}[(a)]	% Beispiel
+	\item ... % (a), (b), (c)
+\end{enumerate}
+\end{lstlisting}
+
+\subsection{Paket \Paket{enumitem}}
+\negAbstand
+Alternative  zu \Paket {enumerate}, jedoch mehr Optionen.
+Ermöglicht neue Listenumgebungen, die \emph{einfacher anzupassen} sind.
+
+
+
+\hrule \vspace{0.5\baselineskip}
+%----- EOF -----

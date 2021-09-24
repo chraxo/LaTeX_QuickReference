@@ -1,0 +1,38 @@
+%%%%%%%%%%%%%%%%%%%
+\pagebreak
+\sectionstage[3]{Formatierung}
+\setlength{\columnseprule}{0.5pt}
+
+\input{Kapitel/Ueberschriften}
+
+\input{Kapitel/FormatierungSchrift}
+
+
+\input{Kapitel/Abstaende}
+
+\input{Kapitel/TextAusrichtung}
+
+%%% ------------------
+\input{Kapitel/Umbrueche}
+
+%%% ------------------
+\columnbreak
+\subsectionstage[2]{Worttrennung} \label{sec:trennung}
+\subsubsection{lokal}
+%
+\begin{tabbing}
+	\lstinline|\-| \= MMMM \= \kill
+\lstinline|\-|	\hspace{1ex} \= Worttrennung \emph{nur hier} erlauben \\
+\lstinline|"-|	\> Worttrennung \emph{zusätzlich} hier erl. * \\
+\lstinline|""|	\> Worttrennung ohne Trennstrich erl. * \\
+\lstinline|\mbox{...}| \> \> Trennung komplett verhindern \\ 
+ ("`..."' wie ein eigenes Zeichen behandeln).
+\end{tabbing}
+{\footnotesize\slshape * Nur mit dem Paket \Paket{babel} und der Paket-Option \lstinline|[ngerman]| möglich.}
+%
+\subsubsection{global}
+Worttrennung verbieten bzw. erlauben:\\
+\lstinline|\hyphenation{Tas-se Schu-le} % Trennungsliste|
+
+\hrule \vspace{0.5\baselineskip}
+%----- EOF -----

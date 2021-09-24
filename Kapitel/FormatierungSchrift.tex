@@ -1,0 +1,140 @@
+\subsectionstage[3]{Schriftformatierung}
+
+\subsubsection*{Schriftgröße \stage{3}}
+\negAbstand
+\ifthenelse{\boolean{a5}}{}{\begin{multicols}{2}}
+\begin{tabbing}
+		\lstinline|\normalsize|	\hspace{1em}	\=  \kill
+		%
+		\tiny{tiny}						\> \lstinline|\tiny| 				 	\\
+		\scriptsize{scriptsize}			\> \lstinline|\scriptsize|   	\\
+		\footnotesize{footnotesize}	\> \lstinline|\footnotesize|	\\
+		\small{small}					\> \lstinline|\small| 			  \\
+		\normalsize{normalsize}			\> \lstinline|\normalsize| 	  \\
+		\large{large}								\> \lstinline|\large| 			  \\
+		\Large{Large}								\> \lstinline|\Large| 			  \\
+		\LARGE{LARGE}								\> \lstinline|\LARGE| 			 	\\
+		\huge{huge}									\> \lstinline|\huge| 				  \\
+		\Huge{Huge}									\> \lstinline|\Huge| 					\\
+\end{tabbing}
+
+\vspace{-2\baselineskip}
+%
+\subsubsection*{Schriftstile \stage{3}}
+\negAbstand
+\begin{tabbing}
+		\hspace{6.0em}	\= textnormal textx \hspace{0em} \=  \kill
+		%
+	\emph{Her\emph{vor}hebung}	
+		\> \lstinline|\emph{Her\emph{vor}hebung}|
+		\\
+	\textrm{Antiqua} 	
+		\> \lstinline|\textrm{Serif}|
+		\> \lstinline|\rmfamily|		
+		\\
+	\textsf{Serifenlose} 		
+		\> \lstinline|\textsf{Grotesk}|
+		\> \lstinline|\sffamily| 
+		\\
+	\texttt{Monospaced} 	
+		\> \lstinline|\texttt{Mono}|	
+		\> \lstinline|\ttfamily| 			
+		\\[1ex]
+	\textmd{normal} 		
+		\> \lstinline|\textmd{n.fett}|
+		\> \lstinline|\mdseries|
+		\\
+	\textbf{fett,\,breiter} 		
+		\> \lstinline|\textbf{fett}|
+		\> \lstinline|\bfseries|
+		\\[1ex]
+		%%
+	\textup{aufrecht} 		
+		\> \lstinline|\textup{aufrecht}|
+		\> \lstinline|\upshape| 	
+		\\
+	\textsl{geneigt} 		
+		\> \lstinline|\textsl{geneigt}|
+		\> \lstinline|\slshape| 	
+		\\
+	\textit{kursiv} 		
+		\> \lstinline|\textit{kursiv}|
+		\> \lstinline|\itshape| 	
+		\\
+	\textsc{Kapitälchen} 		
+		\> \lstinline|\textsc{Kapit.}|
+		\> \lstinline|\scshape| 	
+		\\
+	\textnormal{\parbox{7em}{Grundschrift}} 		
+		\> \lstinline|\textnormal{text}|
+		\> \lstinline|\normalfont| 	
+		
+\end{tabbing}
+Hinweis: Je nach gewählter Schriftart stehen nicht alle Schriftstile zur Verfügung.
+
+{\small
+\begin{tabbing}
+
+fcolorbox\hspace{2ex}	\= \kill% Musterzeile
+	
+	\fbox{fbox}	\> \lstinline|\fbox{Umrahmung}|
+	\\
+	\underline{underline} 	\> 
+	\lstinline|\underline{}| 
+	(ABER: Kein Um- \\ \> bruch möglich!) 
+	\\
+	
+	\textcolor{red}{textcolor} \> \lstinline|\textcolor{red}{Farbiger Text}| 
+	\\ \> (vgl.\, Kap.\,\ref{cha:Farben})
+	\\
+	
+	\colorbox{lime}{colorbox} \> \lstinline|\colorbox{lime}{TEXT}|
+	\\
+		
+	\fcolorbox{red}{lightgray}{fcolorbox} \> \lstinline|\fcolorbox{red}{lightgray}{TEXT}|
+	
+	\\
+	hoch\textsuperscript{gestellt}	\> \lstinline|\textsuperscript{TEXT}|
+	\\
+	tief\textsubscript{gestellt}		\> \lstinline|\textsubscript{TEXT}|
+	
+\end{tabbing}
+}
+\noindent(siehe auch Kap.\,\ref{cha:Farben}.\nameref{cha:Farben})
+
+%\vspace{-1\baselineskip}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+
+\vspace{-2\baselineskip}
+\subsubsection*{Paket \Paket{ulem}}
+
+\lstinline|\usepackage[normalem]{ulem}|
+
+\begin{tabbing}
+	dashulin	\=  \kill % Musterzeile
+\uline{uline}					\> \lstinline|\uline{}| \\
+\uuline{uuline}				\> \lstinline|\uuline{}| \\
+\uwave{uwave}					\> \lstinline|\uwave{}| \\
+\sout{sout}						\> \lstinline|\sout{}| \\
+\xout{xout}						\> \lstinline|\xout{}| \\
+\dashuline{dashuline}	\> \lstinline|\dashuline{}| \\
+\dotuline{dotuline}		\> \lstinline|\dotuline{}| \\
+\end{tabbing}
+
+\vspace{-2\baselineskip}
+\columnbreak
+\subsubsection*{Paket \Paket{fancybox}}
+
+\begin{tabbing}
+	\hspace{1ex}	\=  \kill % Musterzeile
+	\> \lstinline|\usepackage{fancybox}|    \\
+	\> \shadowbox{\lstinline|\shadowbox{}|} \\
+	\> \doublebox{\lstinline|\doublebox{}|} \\
+	\> \ovalbox{\lstinline|\ovalbox{}|} 		\\
+	\> \Ovalbox{\lstinline|\Ovalbox{}|} 		\\
+\end{tabbing}
+
+\end{multicols}\setlength{\columnseprule}{0.5pt}
+
+\negAbstand

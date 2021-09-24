@@ -1,0 +1,185 @@
+%%%%%%%%%%%%%%%%%%%
+
+\columnbreak
+\sectionstage[2]{Programmieren}
+
+\subsectionstage[2]{Variablen}
+
+
+\subsubsectionstage[2]{Counter}
+\negAbstand
+\begin{lstlisting}
+\newcounter{MYCTR}[resetCtr]
+\setcounter{MYCTR}{3} % setzt MYCTR auf 3
+\addtocounter{MYCTR}{3} % addiert 3
+\stepcounter{MYCTR}	% +1
+
+\value{MYCTR}				% Programmierausgabe
+\themyctr						% Textausgabe
+\Roman{MYCTR}	% " anderes Zahlenformat 
+(\arabic, \alph, \Alph, \roman, \Roman)
+\end{lstlisting}
+\LaTeX-Standard-Counter: part, chapter, section, subsection, subsubsection, paragraph, subparagraph, \textbf{page} (Seitennummer), equation, figure, table, footnote, mpfootnote, enumi, enumii, enumiii, enumiv (enumerate-Umgebung)
+
+\bigskip
+
+
+\subsubsectionstage[3]{Längen} \label{cha:Laengen}
+In Einheiten angeben (intern in pt): ex, em, pt, mm, cm, in (vgl. Abschnitt \ref{sec:abstaende})
+\begin{lstlisting}
+\newlength{\MYLEN}
+\setlength{\MYLEN}{2em}
+\addtolength{\MYLEN}{10pt}
+\settowidth{\MYLEN}{TEXT}		% Auf Länge von TEXT setzen.
+\settoheight{\MYLEN}{TEXT}	
+
+\setlength{\MYLEN}{VALUE plus 1em minus 1em} % Variable Länge
+\the\MYLEN		% Wert von MYLEN ausgeben
+\end{lstlisting}
+
+
+\subsubsectionstage[2]{Booleans}
+\begin{lstlisting}
+\newboolean{MYBOOL}
+\setboolean{MYBOOL}{false}
+
+\boolean{MYBOOL} % Verwendung im Code
+\ifthenelse{MYBOOL}{<true code>}{<false code>}
+\end{lstlisting}
+
+
+\subsectionstage[3]{Befehle}
+\vspace{-0.5\baselineskip}
+\begin{lstlisting}
+\newcommand{\NAME}[N]{CODE} 	% optional N: Anzahl Parameter; Im Code werden die Parameter mit #1, #2, usw. eingefügt.
+\newcommand{\beispiel}[2][StandardFürErstesArgument]{#1 #2}  % Bis zu 9 Argumente. Erstes Argument kann optional sein.
+\renewcommand{\NAME}[N]{CODE}	% Bestehenden Befehl überschreiben
+\end{lstlisting}
+Beispiel:
+\begin{lstlisting}
+\newcommand{\meinBefehl}[2] {Erst #1. Dann \textbf{#2} }
+\meinBefehl{Eins}{Zwei}
+\end{lstlisting}
+\newcommand{\meinBefehl}[2] {Erst #1. Dann \textbf{#2}. }
+\hspace{2em} \meinBefehl{Eins}{Zwei}
+
+\posAbstand
+
+\subsectionstage[2]{Umgebungen}
+\negAbstand
+\begin{lstlisting}
+\newenvironment{NAME}[N]{CODE_BEGIN} {CODE_ENDE}
+\renewenvironment{NAME}[N]{CODE_BEGIN} {CODE_ENDE}
+\end{lstlisting}
+
+
+
+%%%%%%%%%%%%%%
+\subsectionstage[2]{Paket \Paket{calc}}
+\negAbstand
+In \lstinline|\setcounter|-Befehlen etc. können berechnete Werte verwendet werden. Operatoren: \lstinline|+ - * /|
+
+Erlaubt: "`\lstinline|2cm*4|"', "`\lstinline|2cm+4pt|. Nicht erlaubt: "`\lstinline|4*2cm|"', "`\lstinline|2cm+4|"' (Reihenfolge).
+
+Weitere Befehle: \lstinline| \real{1.6}, \ratio{}{}, \maxof{}{}, \minof{}{}|
+
+\bigskip\bigskip
+
+%\subsection{\titleformat{\red}  Paket ifthen}
+%for-Schleife wie?
+%\lstinline|\ifthenelse{}{}{}|, \lstinline|\whiledo|
+%\bigskip\bigskip
+
+
+%%%%%%%%%%%%
+\subsectionstage[3]{Paket \Paket{xifthen}}
+\negAbstand
+
+\begin{lstlisting}
+\boolean{<boolean>}
+\newboolean{<boolean>}	%<boolean> contents of alphanumeric characters.
+\setboolean{<boolean>}{<truth value>}	% <truthvalue> = (true,false)
+\ifthenelse{<test expression>}{<true code>}{<false code>}
+
+Test expressions:
+<int1> = <int2>
+<int1> < <int2>
+<int1> > <int2>
+\isodd{<number>}
+\lengthtest{<dimen1> = <dimen2>}	% Test von Längen
+\isundefined <command>
+\equal{<string1>}{<string2>}
+\end{lstlisting}
+%
+{\small\ttfamily Weitere <booleans>: mmode (Are we in math mode?), hmode (Are we in horizontal mode?), vmode (Are we in vertical mode?), etc.
+}
+%
+\begin{lstlisting}
+<expression1> \AND <expression2>
+<expression1> \OR <expression2>
+\NOT <expression>
+\(<expression>\)
+
+usw.
+
+\newtest{<command>}[<n>]{<test expression>}
+\end{lstlisting}
+
+Weitere Details in der Paketdoku.
+
+\bigskip
+% ----- -----
+\subsection{Code-Snippets}
+
+\subsubsection[FOR-Schleife]{FOR-Schleife \mytitleformat{(vgl.\cite{Posp08})}}
+\negAbstand
+\begin{lstlisting}
+%\forloop{zaehlvariable}{von}{bis}{schleifeninhalt}
+\newcommand{\forloop}[4]{
+	\newcounter{#1}
+	\setcounter{#1}{#2}
+	\whiledo { \NOT {\value{#1} > #3} }
+	{
+		#4
+	\stepcounter {#1} %Schleifenzähler erhöhen
+	}
+}
+% Bsp:
+\forloop{loopii}{1}{5}{i=\theloopii}
+\end{lstlisting}
+Alternative: Paket \Paket{forloop} verwenden.
+
+\subsubsection[switch-case]{switch-case (vgl.\cite{Posp08})}
+\negAbstand
+\begin{lstlisting}
+\newcommand{\myCase}[1]{
+	\ifcase #1 	% #1 == 0
+		Antwort 0
+	\or 				% #1 == 1
+		Antwort 1
+	\or 				% #1 == 2
+		Antwort 2
+	\else				% #1 > 2
+		else
+	\fi
+}
+\myCase{2} % Textausgabe: "Antwort 2"
+\end{lstlisting}
+\subsubsection[Code wiederholen]{Code wiederholen (vgl.\cite{Posp08})}
+\negAbstand
+\begin{lstlisting}
+%----- \repeatcode{N}{CODE} ------
+\newcounter{repeatCounter}
+\newcommand{\repeatcode}[2]{ 
+	\setcounter{repeatCounter}{1}
+	\whiledo { \NOT {\value{repeatCounter} > #1} }
+	{%
+		#2%
+		\stepcounter{repeatCounter}%
+	}
+}	
+% Bsp.: \repeat{3}{Test}	% ergibt TestTestTest
+\end{lstlisting}
+
+\hrule \vspace{0.5\baselineskip}
+%----- EOF -----

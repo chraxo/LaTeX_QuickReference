@@ -1,0 +1,241 @@
+
+%%%
+% Farbig markieren:
+% - Befehle			(Standard) - erledigt	(blau)
+% - Pakete			(teal - grün)
+% - Umgebungen	(purple)
+% - Längenmaße	
+%%%
+\lstset{
+		keywordstyle=\color{NavyBlue},		% Befehle	% NavyBlue
+		emphstyle=[1]{\bfseries\color{purple}},		% Pakete
+		emphstyle=[2]{\bfseries\color{teal}},	% Umgebungen
+		emphstyle=[3]{\bfseries\color{teal}},	% Längenmaße
+}
+\lstset{
+	numbers			=none,                        % (left, right, none)
+	numberstyle	=\tiny,                      	% Line-numbers fonts
+	stepnumber	=1,                           % Step between two line-numbers
+	numbersep		=5pt,%5pt,       							% How far are line-numbers 
+	frame				=none,                        % A frame around the code
+	tabsize			=2,                           % Default tab size
+	captionpos	=b,                           % Caption-position = bottom
+	breaklines	=true,                        % Automatic line breaking?
+	breakatwhitespace=false,                	% Automatic breaks only at whitespace?
+	showspaces	=false,                       % Dont make spaces visible
+	showstringspaces = false									% Leerzeichen in Strings anzeigen
+	showtabs		=false,                       % Dont make tabls visible
+	columns			=flexible, %flexible,						% Column format  (flexible, fixed or fullflexible)
+	%keepspaces=true, 
+}
+
+%-----------------------------------------
+%% Styles: basicstyle, identifierstyle, commentsyle, stringstyle, keywordstyle
+\lstset{
+	language		=[LaTeX]{TeX},
+	%backgroundcolor=\color{lightgray},
+	basicstyle			={\ttfamily\small},
+	commentstyle		={\ttfamily\color{darkgray}},
+	identifierstyle	={\ttfamily},
+	stringstyle			={\ttfamily},
+}
+
+%-----------------------------------------
+\lstset{
+	%keywordstyle=\ttfamily,
+	%keywordstyle=\color{blue},		% Keywords font ('*' = uppercase)
+	otherkeywords={}, 
+	deletekeywords={}
+}
+%-------- morekeywords -------------------------
+
+%----- morekeywords: Basic LaTeX --------------
+\lstset{morekeywords={
+part, chapter, subsection, subsubsection, addsec,
+ftrq, flq, href,
+tableofcontents, thechapter, thesection, thetable, thefigure, chaptername,
+newblock, 
+chaptermarkformat, sectionmarkformat, subsectionmarkformat, thesubsection, chapappifchapterprefix,
+autodot,
+setlength,
+glqq, grqq, frqq, flqq, glq, grq, frq, grq,		% Anführungszeichen
+eqref, appendix, marginline,
+phantomsection,	
+textsubscript,
+texorpdfstring,
+}}
+
+%----- morekeywords: SONSTIGES --------------
+\lstset{morekeywords={
+meinBefehl, beispiel, addlinespace, arraybackslash, xspace, nicefrac, themyctr, mylen, VARIABLE, NAME, text,
+zB, addtokomafont,
+whiledo,
+KOMAoptions,
+url,
+showkeyslabelformat,
+linnumbers,
+sectfont,
+extrarowheight
+}}
+
+%----- morekeywords: Mathe (Package amsmath etc.) ------
+\lstset{morekeywords={
+mathcal, mathbb, mathring, tag, notag
+}}
+
+%----- morekeywords: Package Blindtext --------------
+\lstset{morekeywords={
+blindtext, Blindtext,
+}}
+
+%----- morekeywords: Package booktabs --------------
+\lstset{morekeywords={
+toprule, midrule, bottomrule, cmidrule
+}}
+
+%----- morekeywords: Package calc --------------
+\lstset{morekeywords={
+real, ratio, maxof, minof
+}}
+
+%----- morekeywords: Package Caption --------------
+\lstset{morekeywords={
+subref, subcaptionref, captionof
+}}
+
+%----- morekeywords: Package colortbl --------------
+\lstset{morekeywords={
+arrayrulecolor, columncolor, rowcolor, cellcolor
+}}
+
+%----- morekeywords: Package fancybox --------------
+\lstset{morekeywords={
+shadowbox, doublebox, ovalbox, Ovalbox
+}}
+
+%----- morekeywords: Package graphicx --------------
+\lstset{morekeywords={
+includegraphics
+}}
+
+%----- morekeywords: Package hhline --------------
+\lstset{morekeywords={
+\hhline
+}}
+
+%----- morekeywords: Package listings --------------
+\lstset{morekeywords={
+lstset, lstinline, lstinputlisting
+}}
+
+%----- morekeywords: Package longtable --------------
+\lstset{morekeywords={
+endfirsthead, endhead, endfoot, endlastfoot, 
+}}
+
+%----- morekeywords: Package multicols --------------
+\lstset{morekeywords={
+columnbreak
+}}
+
+%----- morekeywords: Package placeins --------------
+\lstset{morekeywords={
+FloatBarrier
+}}
+
+%----- morekeywords: Package ragged2e --------------
+\lstset{morekeywords={
+RaggedRight, Centering, RaggedLeft
+}}
+
+%----- morekeywords: Package scrpage --------------
+\lstset{morekeywords={
+clearscrheadfoot, clearscrheadings, clearscrplain,
+ihead, chead, ohead, ifoot, cfoot, ofoot,
+lehead, cehead, rehead, lohead, cohead, rohead, lefoot, cefoot, refoot, lofoot, cofoot, rofoot,
+pagemark, automark, headmark, manualmark,
+headfont, footfont, pnumfont,
+setheadsepline, setfootsepline, setheadtopline, setfootbotline
+}}
+
+%----- morekeywords: Package setspace --------------
+\lstset{morekeywords={
+doublespacing, onehalfspacing, singlespacing, setstretch
+}}
+
+%----- morekeywords: Package tabularx --------------
+\lstset{morekeywords={
+newcolumntype
+}}
+
+%----- morekeywords: Package textcomp --------------
+\lstset{morekeywords={
+texttwelveudash, textthreequartersemdash,
+textdblhyphen, textdblhyphenchar, textasteriskcentered, textborn, textpm, texttimes, textdiv, textfractionsolidus, textonequarter, textonehalf, textthreequarters, textdiscount, textperthousand, textpertenthousand, textsurd,
+textonesuperior, texttwosuperior, textthreesuperior, textleftarrow, textrightarrow, textuparrow, textdownarrow, textlangle, textrangle, textlbrackdbl, textrbrackdbl, textlquill, textrquill, textbardbl,
+textservicemark, textcopyleft, textcircledP, textpilcrow, textcurrency, textreferencemark, textmusicalnote, textleaf,
+textmarried, textdivorced, textdied, textordmasculine, textordfeminine, textbrokenbar, textminus, textasciimacron, textlnot, textinterrobang, textinterrobangdown, texttildelow, textasciibreve, textasciicaron, textacutedbl, textgravedbl, textquotesingle, textquotestraightbase, textquotestraightdblbase, textasciigrave, textasciiacute, textasciidieresis, textasciimacron, textlnot, textinterrobang, textinterrobangdown,  texttildelow,  textasciibreve,  textasciicaron,  textacutedbl,  textgravedbl,  textquotesingle,  textquotestraightbase, textquotestraightdblbase,  textasciigrave, textasciiacute, textasciidieresis,
+textblank, textmho, textohm, textmu, textbaht, textcelsius, textcolonmonetary textcentoldstyle, textcent, textdong, textestimated, texteuro, textflorin, textguarani, pounds, textlira, textnaira, textnumero, textpeso, textrecipe, textdollaroldstyle, textyen, textwon,
+textopenbullet, textdegree, textbigcircle, textcolonmonetary, textcentoldstyle,
+}}
+
+%----- morekeywords: Package tikz --------------
+\lstset{morekeywords={
+usetikzlibrary, tikz, draw, tikzoptions, node, shade, 
+}}
+
+%----- morekeywords: Package ulem --------------
+\lstset{morekeywords={
+uline, uuline, uwave, sout, xout, dashuline, dotuline,
+}}
+
+%----- morekeywords: Package xcolor --------------
+\lstset{morekeywords={
+textcolor, colorbox, fcolorbox, color, pagecolor, definecolor
+}}
+
+%----- morekeywords: Package xifthen --------------
+\lstset{morekeywords={
+newboolean, setboolean, ifthenelse, isodd, lengthtest, isundefined, equal, AND, OR, NOT, newtest, boolean
+}}
+
+%-----------------------------------------
+
+
+%----- morekeywords: Package VORLAGE --------------
+\lstset{morekeywords={
+%
+}}
+
+%-----------------------------------------
+\lstset{
+	%% Escape to LaTeX:
+	mathescape = false, 	% $a=x$ Mathemodus ermoeglichen
+	escapechar = {²},		% Buchstabe zum Verlassen und Zurückkehren (LaTeX-Modus)
+	% escapeinside={²}{³},	% Alternative zu escapechar
+	%escapebegin= {},		% wird zu Beginn des Escape-Modus eingefügt
+	%escapeend= {}				% wird zum Ende des Escape-Modus eingefügt
+}
+
+%-----------------------------------------
+%----- Weitere Betonungen: Pakete -----
+\lstset{emph=[1]{
+	usepackage
+	%amsmath, amssymb, amsthm, array, babel, blindtext, booktabs, calc, caption, colortbl,  enumitem,  fancybox,  fixltx2e,  mathtools,   microtype,  multicol,   natbib,  nicefrac,  pdflscape,  pdfpages,  pgfplots,  picins,  placeins,  ragged2e, scrpage2  , setspace,  subcaption,  siunitx,  stfloats,  tabularx,  textcomb,  tikz,  url,  ulem,  units,  wrapfig,  xcolor,  xspace, 
+}}
+%----- Weitere Betonungen: Umbegungen -----
+\lstset{
+emph=[2]{
+	begin, end,
+	%array, document, FlushLeft, FlushRight, Center, raggedright, raggedleft, centering, samepage, minipage, figure, wrapfigure, itemize, enumerate, description, tabbing, tabular, lstlisting, math, equation, multline, gather, align, flalign, multicols, landscape, thebibliography,longtable,
+},
+%emphstyle=[1]{\bfseries\color{purple}}
+}
+
+%----- Weitere Betonungen: Längenmaße -----
+\lstset{emph=[3]{
+	mm, cm, in, pt, em, ex,
+}}
+
+%-----------------------------------------
+%------------- Listings Ende --------------

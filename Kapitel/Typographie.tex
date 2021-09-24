@@ -1,0 +1,85 @@
+%%%%%%%%%%%%%%%%%%
+%\columnbreak ~ 
+\columnbreak
+\sectionstage[2]{Typographie}
+Vertiefende Informationen: 
+\cite{typokurz}; 
+\cite{Struckmann};
+\url{http://www.matthiaspospiech.de/latex/dokumentation/typographie/}
+\vspace{-0.5\baselineskip}
+
+%%%
+\subsection{Typographie \texorpdfstring{(vgl.\cite{Struckmann})}{}} \label{sec:typo}
+
+\subsubsection*{Leerzeichen}
+
+\begin{tabbing}
+\hspace{1.7em}	\= \hspace{2.2em}  	\=  \kill  % Musterzeile
+%
+	xx					\> \lstinline|xx|			\> kein Leerzeichen   \\
+	x\,x				\> \lstinline|x\,x|		\>	halbes Leerzeichen	\\
+	x x					\> \lstinline|x x|   	\>	(ganzes) Leerzeichen	\\
+	x~x					\> \lstinline|x~x|		\> 	geschütztes (ganzes) Leerzeichen 
+	\\ \>\> $\rightarrow$ Umbruch verhindert 
+\end{tabbing}
+
+
+\addtolength{\leftmargini}{-10pt}
+
+\begin{itemize}
+	\item Abkürzungen: Halbes Leerzeichen. {z.\,B.~~~~\lstinline|z.\,B.|} \\
+		Auch möglich: \lstinline|\newcommand{\zB} {\mbox{z.\,B.}\xspace}| (Befehl \verb|\xspace| mit Paket \Paket{xspace} importieren).
+	\item Einheiten: Trennung verhindern $\rightarrow$ Geschütztes Leerzeichen ~~~\lstinline|5~kg|.
+\end{itemize}
+\negAbstand
+
+\addtolength{\leftmargini}{+10pt}
+
+\subsubsection*{Anführungszeichen}
+	
+\begin{tabbing}
+	\hspace{5em} 			\= \kill
+%
+	\glqq\dots\grqq		\> \lstinline|\glqq\dots\grqq| 	\\
+										\> \emph{oder:} \lstinline|"`\dots"'| \\
+	\frqq\dots\flqq		\> \lstinline|\frqq\dots\flqq|	\\
+	\glq\dots\grq			\> \lstinline|\glq\dots\grq|   	\\
+	\frq\dots\flq 		\> \lstinline|\frq\dots\flq| 		\\
+	``\dots''					\> \lstinline|``\dots''|  			\\
+	`\dots' 					\> \lstinline|`\dots'| 
+\end{tabbing}
+
+
+
+\subsubsection*{Binde- und andere Striche}
+\begin{tabular}{L{1ex}L{4em}L{11em}}
+%\hspace{1em} \= \lstinline|\textthreequartersemdash{}| \hspace{-3em} \=  \kill
+-			&  \lstinline|-| &  		Divis (Bindestrich)
+\\
+--		&  \lstinline|--| &  		Halbgeviertstrich (Gedankenstrich)
+\\
+---		&  \lstinline|---| &  	Englischer Gedankenstrich
+\\
+\texttwelveudash{} &  \ \befehlsformat{text twelve udash\{\}}  &  Zweidrittel-Geviertstrich
+\\
+\textthreequartersemdash{} 
+&  \ \befehlsformat{text three quarter semdash\{\} }
+&   Dreiviertel-Geviertstrich
+\end{tabular}
+
+%
+\begin{description}
+	\item[Bindestrich] \lstinline|-|	\\
+SOS-Ruf ~~~ \lstinline|SOS-Ruf|	\\
+ISBN 978-3-642-12880-6
+
+\item[Gedankenstrich] \lstinline|--| \\
+	Er kam -- und ging gleich wieder.\\
+	\lstinline|Er kam -- und ging gleich wieder.|
+\end{description}
+
+Worttrennung: siehe Abschnitt \ref{sec:trennung}
+
+\setlength{\columnseprule}{0.5pt}
+\hrule \vspace{0.5\baselineskip}
+%----- EOF -----

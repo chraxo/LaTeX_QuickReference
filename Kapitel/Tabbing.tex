@@ -1,0 +1,48 @@
+%%%%%%%%%%%%%%%%%%
+\setlength{\columnseprule}{0.5pt}
+\mycolumnbreak
+
+\noindent\begin{minipage}{\linewidth}
+\sectionstage[4]{Tabulatoren: Tabbing-Umgebung}
+
+\subsection*{Beispiel}
+
+\begin{tabbing}
+ghij \hspace{1em} \=  \kill
+a     \> ef \\
+ghij \>  klmn
+\end{tabbing}
+
+\vspace{-0.5\baselineskip}
+\begin{lstlisting}
+\begin{tabbing}
+	ghij \hspace{1em} \=  		\kill
+	a                 \> ef 	\\
+	ghij              \> klmn
+\end{tabbing}
+\end{lstlisting}
+
+\end{minipage}
+
+Hinweis: Innerhalb der Tabbing-Umgebung gibt es keinen automatischen Zeilenumbruch!
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Musterzeile}
+\vspace{-0.5\baselineskip}
+\begin{lstlisting}
+\=			% Tabulator für Musterzeile
+\kill		% Zeilenende. Zeile wird nicht ausgegeben
+\end{lstlisting}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Normale Zeilen}
+\vspace{-0.5\baselineskip}
+\begin{lstlisting}
+\\ 			% Zeilenende
+\>			% zum nächsten Tabulator
+\<			% zum vorhergehenden Tabulator
+a \` b	% a links, b rechts vom Tabulator
+\end{lstlisting}
+%
+\hrule \vspace{0.5\baselineskip}
+%----- EOF -----

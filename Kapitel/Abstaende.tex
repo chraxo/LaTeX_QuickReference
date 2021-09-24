@@ -1,0 +1,68 @@
+%%-------------------------
+\columnbreak
+%\vspace{0.5\baselineskip} \hrule 
+\subsectionstage[3]{Abstände} \label{sec:abstaende}
+(siehe auch Abschn.\,\ref{cha:Laengen}.\nameref{cha:Laengen})
+%
+\begin{tabbing}
+$x\qquad x$	x	\= \lstinline|x\qquad x|x	\= \kill
+%
+||				\> 										\> {\small \emph{(kein Abstand)}} 	\\
+|\!|			\> \verb|\!|					\> {\small \emph{(negativ)}} \\
+|\,|			\> \verb|\,|					\>  \\
+|\ |			\> \lstinline|\ |			\> 	\\
+|\quad |	\> \lstinline|\quad|	\> $(\hat = 1em)$	\\
+|\qquad |	\> \lstinline|\qquad|	\> $(\hat = 2em)$
+\end{tabbing}
+%
+%\begin{multicols}{2}
+\subsubsection*{Läng\-en\-ein\-hei\-ten}
+\vspace{-0.7\baselineskip}
+\begin{tabbing}
+\lstinline|1pt| |\hspace{1pt}|\\
+\lstinline|1mm| |\hspace{1mm}|\\
+\lstinline|1ex| |\hspace{1ex}|\\
+\lstinline|1em| |\hspace{1em}|\\
+\lstinline|1cm| |\hspace{1cm}|\\
+\lstinline|1in| |\hspace{1in}|
+\end{tabbing}
+
+\subsubsection*{Läng\-en\-va\-ri\-ab\-len}
+\vspace{-0.7\baselineskip}
+\begin{lstlisting}
+\baselineskip	% Zeilenabstand
+\linewidth 		% Zeilenbreite
+\textwidth		
+\end{lstlisting}
+(s.a. Abschn. \ref{sec:layout_var})
+
+\negAbstand
+%
+\subsubsection*{Horizontale Ab\-stän\-de}
+\vspace{-0.7\baselineskip}
+\begin{lstlisting}
+\,			% kleines Leerzeichen
+\enspace		% Ziffernbreite
+\quad				% Buchstabenhöhe
+\qquad			% 2* \quad
+\hfill			% variabler Abst.
+\hspace{L}	% L breit
+\hspace*{L}	% bleibt am Zeilen-Ende oder -Anfang Zeile erhalten.
+\!	% negativ
+\hspace{\widthof{my text}} % Mit Paket calc
+\end{lstlisting}
+
+\negAbstand
+%
+\subsubsection*{Vertikale Abstände}
+\vspace{-0.7\baselineskip}
+\begin{lstlisting}		
+\smallskip	% etwa 1/4 Zeile
+\medskip		% etwa 1/2 Zeile
+\bigskip		% etwa 1 Zeile
+\vfill			% var. Abst.
+\vspace{L}	% L hoch
+\vspace*{L}	% 
+\\[1em]	% Zeilenumbruch+vert. Abst.
+\end{lstlisting}
+%\end{multicols}

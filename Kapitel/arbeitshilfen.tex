@@ -1,0 +1,31 @@
+\section{Arbeitshilfen}
+
+\addtolength{\leftmargini}{-10pt}
+\begin{itemize}
+
+	\item Blindtext zum Testen von Textausgaben: \lstinline|\usepackage{blindtext}| \Pfeil Befehle \lstinline|\blindtext| (kurzer Text) und \lstinline|\Blindtext| (langer Text).
+
+	\item Zeilennummern zum Korrigieren: \lstinline|\usepackage{lineno} \linnumbers| 
+
+\item Referenz-Keys von Abbildungen, Literaturverzeichniseinträgen etc. am Rand anzeigen: 
+	\begin{lstlisting}
+\usepackage[notref, notcite]{showkeys}
+\usepackage[hyphens]{url}
+\usepackage[preserveurlmacro]{breakurl}	% wirklich nötig ???
+\renewcommand*\showkeyslabelformat[1]{%	
+\fbox{%
+	\parbox[t]{\marginparwidth}{
+	\raggedright\normalfont\small
+	\url{#1}
+}}}
+	\end{lstlisting}
+	
+\item Schnelleres kompilieren mittels includeonly: Nach dem Includeonly-Befehl werden nur noch includes berücksichtigt, die in includeonly explizit genannt sind.
+\begin{lstlisting}
+\includeonly{Kapitel1, Kapitel2}
+\end{lstlisting}
+
+\end{itemize}
+
+\hrule \vspace{0.5\baselineskip}
+%----- EOF -----

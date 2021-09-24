@@ -1,0 +1,30 @@
+%%%%%%%%%%%%%%%%%%%
+\setlength{\columnseprule}{0.5pt}
+
+\columnbreak
+\subsectionstage[3]{Mehrspaltiger Textsatz (\Paket{multicol})}
+\negAbstand
+
+\begin{lstlisting} 
+\begin{multicols}{N}		% multicols*:ohne automatischen Spaltenausgleich; N: Anzahl Spalten
+	\columnbreak					% manueller Spaltenumbruch
+	\hrule								% Horizontale Linie
+\end{multicols}
+\end{lstlisting}
+
+\subsubsection*{Einstellungen}
+\negAbstand
+
+\begin{lstlisting} 
+\setlength{\columnseprule}{0.5pt}	% Trennlinie: Strichstärke (optional)
+\setlength{\columnsep}{10pt}			% Abstand der Spalten
+\end{lstlisting}
+
+\begin{description}
+
+\item[Hinweis] \textcolor{red}{Floats (Gleitumbegungen) sind innerhalb von multicols nicht erlaubt.} 
+
+\item[Hinweis] Werden zwei multicols-Umgebungen ineinander verschachtelt, so wird die Innere Umgebung durch Spaltenumbruch auf die äußere verteilt.
+
+\item[Hinweis] Verschachtelte multicols-Umgebungen können Probleme beim Umbruch bereiten. In diesem Fall sollten die inneren multicols-Umgebungen in mehrere kleinere multicols-Umgebungen aufgesplittet werden.
+\end{description}

@@ -1,0 +1,17 @@
+(La)TeX-Compiler:
+
+Argumente an Compiler: 
+-synctex=-1 -max-print-line=120 -interaction=nonstopmode "%wm"
+
+Viewer:
+Pfad:
+C:\Program Files (x86)\SumatraPDF\SumatraPDF.exe -inverse-search "\"C:\Program Files (x86)\TeXnicCenter\TeXnicCenter.exe\" /ddecmd \"[goto('%f','%l')]\""
+
+Projektausgabe> Kommandozeile: "%bm.pdf"
+
+suche in Ausgabe> DDE-Kommando
+[ForwardSearch("%bm.pdf","%Wc",%l,0,0,1)]
+
+Server: sumatra		Thema: control
+
+vor comp. Ausg. schlieﬂen: Nicht schlieﬂen
